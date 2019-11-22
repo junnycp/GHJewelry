@@ -1,0 +1,74 @@
+{
+  "code": "SUCCESS",
+  "paramCode": null,
+  "message": null,
+  "status": "SUCCESS",
+  "data": [
+    {
+      "appParamId": 6,
+      "code": "R1234",
+      "type": "Ring",
+      "name": "Ring",
+      "value": "40$",
+      "status": 1,
+      "description": "Device_status",
+      "createTime": null,
+      "updateTime": null
+    },
+    {
+      "appParamId": 6,
+      "code": "B5643",
+      "type": "Bracelet",
+      "name": "Bracelet",
+      "value": "250$",
+      "status": 1,
+      "description": "Device_status",
+      "createTime": null,
+      "updateTime": null
+    },
+    {
+      "appParamId": 6,
+      "code": "B2353",
+      "type": "Bracelet",
+      "name": "Bracelet",
+      "value": "20$",
+      "status": 0,
+      "description": "Device_status",
+      "createTime": null,
+      "updateTime": null
+    },
+    {
+      "appParamId": 6,
+      "code": "B8577",
+      "type": "Bracelet",
+      "name": "Bracelet",
+      "value": "30$",
+      "status": 1,
+      "description": "Device_status",
+      "createTime": null,
+      "updateTime": null
+    },
+    {
+      "appParamId": 6,
+      "code": "C7662",
+      "type": "Chain",
+      "name": "Chain",
+      "value": "28$",
+      "status": 1,
+      "description": "Device_status",
+      "createTime": null,
+      "updateTime": null
+    },
+    {
+      "appParamId": 6,
+      "code": "C8786",
+      "type": "Chain",
+      "name": "Chain",
+      "value": "252$",
+      "status": 0,
+      "description": "Device_status",
+      "createTime": null,
+      "updateTime": null
+    }
+  ]
+}

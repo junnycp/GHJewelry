@@ -1,0 +1,38 @@
+{
+  "code": "SUCCESS",
+  "paramCode": null,
+  "message": null,
+  "status": "SUCCESS",
+  "data": [
+    {
+      "userId": 1,
+      "username": "parker",
+      "password": "parkerdeptrai",
+      "status": 1
+    },
+    {
+      "userId": 2,
+      "username": "Loki",
+      "password": "emthor",
+      "status": 0
+    },
+    {
+      "userId": 3,
+      "username": "Tony Stark",
+      "password": "richkid",
+      "status": 0
+    },
+    {
+      "userId": 4,
+      "username": "Batman",
+      "password": "richkid2",
+      "status": 1
+    },
+    {
+      "userId": 5,
+      "username": "Black Panther",
+      "password": "anhdaden",
+      "status": 1
+    }
+  ]
+}

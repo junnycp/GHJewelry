@@ -1,0 +1,34 @@
+{
+  "title": "Quản lý Beacons",
+  "store": "Cửa hàng",
+  "code": "Mã thiết bị",
+  "status": "Trạng thái",
+  "placeholder": {
+    "store": "Chọn cửa hàng",
+    "code": "Nhập mã thiết bị",
+    "status": "Chọn trạng thái",
+    "insertName": "Nhập tên thông báo",
+    "selectName": "Chọn tên thông báo",
+    "content": "Nhập nội dung",
+    "link": "Nhập đường link thông báo",
+    "company": "Chọn CTKV",
+    "province": "Chọn Tỉnh/TP",
+    "gender": "Chọn giới tính",
+    "type": "Chọn loại khách hàng",
+    "fromDate": "Từ ngày",
+    "toDate": "Đến ngày"
+  },
+  "notification": {
+    "title": "Quản lý thông báo của Beacon",
+    "name": "Tên thông báo",
+    "content": "Nội dung",
+    "link": "Đường link",
+    "company": "CTKV",
+    "store": "Cửa hàng",
+    "province": "Tỉnh/TP",
+    "gender": "Giới tính",
+    "type": "Loại khách hàng",
+    "fromDate": "Từ ngày",
+    "toDate": "Đến ngày"
+  }
+}

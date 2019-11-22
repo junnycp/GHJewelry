@@ -1,0 +1,23 @@
+{
+  "title": "Product Management",
+  "code": "Product ID",
+  "name": "Product Name",
+  "type": "Product Type",
+  "price": "Price",
+  "size": "Size",
+  "status": "Status",
+  "createdDate": "Created Date",
+  "note": "Note",
+  "placeholder": {
+    "code": "Type in Product ID",
+    "name": "Type in Product Name",
+    "status": "Choose status",
+    "price": "From price",
+    "size": "Select size",
+    "createdDate": "Choose created date",
+    "note": "Type in note"
+  },
+  "message": {
+    "found": "Found {{result}} products!"
+  }
+}

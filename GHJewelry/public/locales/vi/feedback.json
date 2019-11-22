@@ -1,0 +1,13 @@
+{
+  "star": "Số sao tương ứng",
+  "level": "Điểm",
+  "name": "Mức độ hài lòng",
+  "detail": "Chi tiết",
+  "title": "Cấu hình thang điểm",
+  "rating-code": "Mã lý do",
+  "rating-name": "Tên lý do",
+  "score": "Điểm đánh giá",
+  "status": "Trạng thái",
+  "type": "Loại lý do"
+
+}

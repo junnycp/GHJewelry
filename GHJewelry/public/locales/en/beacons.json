@@ -1,0 +1,34 @@
+{
+  "title": "Beacons Management",
+  "store": "Store",
+  "code": "Device Code",
+  "status": "Status",
+  "placeholder": {
+    "store": "Select store",
+    "code": "Type in device code",
+    "status": "Select device's status",
+    "insertName": "Type in Notification Name",
+    "selectName": "Choose Notification Name",
+    "content": "Type in notification content",
+    "link": "Insert notification link",
+    "company": "Choose Regional Company",
+    "province": "Choose Provice/City",
+    "gender": "Choose Gender",
+    "type": "Choose type of customer",
+    "fromDate": "From date",
+    "toDate": "To date"
+  },
+  "notification": {
+    "title": "Beacon Notification Management",
+    "name": "Notification Name",
+    "content": "Content",
+    "link": "Link",
+    "company": "Regional Company",
+    "store": "Store",
+    "province": "Province/City",
+    "gender": "Gender",
+    "type": "Type of Customer",
+    "fromDate": "From date",
+    "toDate": "To date"
+  }
+}
