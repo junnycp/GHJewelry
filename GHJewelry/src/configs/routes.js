@@ -38,6 +38,7 @@ const User = React.lazy(() => import('../views/Users/User'));
 const UserManagement = React.lazy(() => import('../views/UsersManagement'));
 const ProductManagement = React.lazy(() => import('../views/ProductManagement'));
 const CategoryManagement = React.lazy(() => import('../views/CategoryManagement'));
+const OrderManagement = React.lazy(() => import('../views/OrderManagement'));
 
 // https://github.com/ReactTraining/react-router/tree/master/packages/react-router-config
 const routes = [
@@ -85,6 +86,7 @@ const routes = [
   { path: '/users/usersManagement', exact: true,  name: 'Users Management', component: UserManagement},
   { path: '/users/:id', exact: true, name: 'User Details', component: User },
   { path: '/category', exact: true, name: 'Category Management', component: CategoryManagement },
+  { path: '/orders', exact: true, name: 'Order Management', component: OrderManagement },
 ];
 
 export default routes;

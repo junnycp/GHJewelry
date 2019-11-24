@@ -57,7 +57,6 @@ class UsersManagement extends BaseComponent {
   onOpenInsert = () => {
     showDialog(
       this.getDetailForm(Constants.ACTION.INSERT, {
-        status: 1
       }),
       this.trans("common.addNew")
     )
@@ -79,6 +78,12 @@ class UsersManagement extends BaseComponent {
     }
   };
 
+  onDelete = async row => {
+      await this.service.delete(row.idUser);
+      showMessageBox(this.trans("common.message.deleteSuccess"));
+      this.onFetchUsers();
+  };
+
   genActionCol = (cell, row) => {
     return (
       <ActionFormatter
@@ -89,7 +94,7 @@ class UsersManagement extends BaseComponent {
         onClickView={() => this.onOpenView(row)}
         onClickDelete={() =>
           showConfirm(this.trans("common.message.confirmDelete"), () => {
-            showMessageBox(this.trans("common.message.deleteSuccess"));
+            this.onDelete(row)
           })
         }
         onClickEdit={() => this.onOpenUpdate(row)}
@@ -97,19 +102,20 @@ class UsersManagement extends BaseComponent {
     );
   };
 
-  genStatusCol = (cell, row) => {
-    return <StatusFormatter value={row.status === 1 ? 'ACTIVE' : 'INACTIVE'}
-                            label={row.status === 1 ? this.trans("common.active") : this.trans("common.inactive")}/>
-  };
+  // genStatusCol = (cell, row) => {
+  //   return <StatusFormatter value={row.status === 1 ? 'ACTIVE' : 'INACTIVE'}
+  //                           label={row.status === 1 ? this.trans("common.active") : this.trans("common.inactive")}/>
+  // };
 
   genCols = () => {
     return [
       {title: this.trans("common.num"), key: 'stt', render: (text, record, index) => index + 1},
       {title: this.trans("common.action"), key: 'action', render: this.genActionCol},
-      {title: this.trans("users:userId"), dataIndex: 'userId', key: 'userId'},
-      {title: this.trans("users:username"), dataIndex: 'username', key: 'username'},
+      {title: this.trans("users:username"), dataIndex: 'userName', key: 'userName'},
       {title: this.trans("users:password"), dataIndex: 'password', key: 'password'},
-      {title: this.trans("users:status"), dataIndex: 'status', key: 'status', render: this.genStatusCol},
+      {title: this.trans("users:email"), dataIndex: 'email', key: 'email'},
+      {title: this.trans("users:phone"), dataIndex: 'phone', key: 'phone'},
+      {title: this.trans("users:address"), dataIndex: 'address', key: 'address'},
     ];
   };
 

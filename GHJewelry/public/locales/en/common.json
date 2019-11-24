@@ -47,6 +47,7 @@
       "maxInputLength": "{{field}} not allowed to be larger than {{num}} characters",
       "chooseRoom": "Please choose room before adding equipment",
       "invalidEmail": "Wrong Email!",
+      "invalidPhone": "Invalid Phone number!",
       "comparisonDate": "The end date must be greater than the start date!",
       "comparisonTime": "The end time must be greater than the start time!",
       "fromDate": "The start date must be greater than the now time!",

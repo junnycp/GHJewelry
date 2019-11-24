@@ -5,15 +5,16 @@ import {ModalBody, ModalFooter} from "reactstrap";
 import {Form, Input, Select} from 'antd';
 import Label from "../../components/Label";
 import Button from "../../components/Button";
-import ProductManagementService from "../../services/UsersManagementService";
 import Constants from "../../configs/Constants";
+import {showMessageBox} from "../../components/MessageBox";
+import UsersManagementService from "../../services/UsersManagementService";
 
 const Option = Select.Option;
 
 class DetailForm extends BaseComponent {
   constructor(props) {
     super(props);
-    this.service = new ProductManagementService();
+    this.service = new UsersManagementService();
   }
 
   componentWillMount() {
@@ -53,19 +54,18 @@ class DetailForm extends BaseComponent {
     return emailRegex.test(String(email).toLowerCase());
   };
 
+  validatePhoneNum = (number) => {
+    const numberRegex = /(03|01[2|6|8|9])+([0-9]{8})\b/;
+    return numberRegex.test(number);
+  };
+
   validate() {
     let data = this.state.data;
     let errors = {};
     let formIsValid = true;
-    if (!data["userId"]) {
+    if (!data["userName"]) {
       formIsValid = false;
-      errors["userId"] = this.trans("common.message.notEmpty", {
-        field: this.trans("users:userId")
-      });
-    }
-    if (!data["username"]) {
-      formIsValid = false;
-      errors["username"] = this.trans("common.message.notEmpty", {
+      errors["userName"] = this.trans("common.message.notEmpty", {
         field: this.trans("users:username")
       })
     }
@@ -87,6 +87,12 @@ class DetailForm extends BaseComponent {
         field: this.trans("users:email")
       })
     }
+    if (data["phone"] && !this.validatePhoneNum(data["phone"])) {
+      formIsValid = false;
+      errors["phone"] = this.trans("common.message.invalidPhone", {
+        field: this.trans("users:phone")
+      })
+    }
     this.setState({errors: errors});
     return formIsValid;
   }
@@ -94,17 +100,16 @@ class DetailForm extends BaseComponent {
   onSubmit = () => {
     if (this.validate()) {
       if (this.state.action === Constants.ACTION.UPDATE) {
-        // this.service.update(this.state.data, () => {
-        //   showMessageBox(this.trans("common.message.updateSuccess"));
-        //   this.props.options.onComplete();
-        // })
+        this.service.update(this.state.data, () => {
+          showMessageBox(this.trans("common.message.updateSuccess"));
+          this.props.options.onComplete();
+        });
       }
       if (this.state.action === Constants.ACTION.INSERT) {
-        console.log("data", this.state.data);
-        // this.service.insert(this.state.data, () => {
-        //   showMessageBox(this.trans("common.message.updateSuccess"));
-        //   this.props.options.onComplete();
-        // })
+        this.service.insert(this.state.data, () => {
+          showMessageBox(this.trans("common.message.insertSuccess"));
+          this.props.options.onComplete();
+        });
       }
     }
   };
@@ -141,40 +146,22 @@ class DetailForm extends BaseComponent {
                 <div className="col-md-6" style={{marginTop: 5}}>
                   <Label>{this.trans("users:username")}: <span style={{color: 'red'}}> *</span></Label>
                   <Input
-                    id="username"
+                    id="userName"
                     maxLength={1000}
                     disabled={this.state.disabledAll}
-                    name="username"
+                    name="userName"
                     allowClear
                     addonAfter={<i className="fa fa-vcard fa-fw"
-                                   style={this.state.errors["username"] ? {color: 'red'} : null}/>}
+                                   style={this.state.errors["userName"] ? {color: 'red'} : null}/>}
                     placeholder={this.trans("users:placeholder.username")}
-                    onChange={this.onChangeTextFieldCustom.bind(this, "username")}
-                    defaultValue={this.state.data.username}
+                    onChange={this.onChangeTextFieldCustom.bind(this, "userName")}
+                    defaultValue={this.state.data.userName}
                   />
                   <span className="errorMessage">
-                    {this.state.errors["username"]}
+                    {this.state.errors["userName"]}
                   </span>
                 </div>
-                <div className="col-md-6" style={{marginTop: 5}}>
-                  <Label>{this.trans("users:status")}: <span style={{color: 'red'}}> *</span></Label>
-                  <Select id="status"
-                          disabled={this.state.disabledAll || this.state.action === Constants.ACTION.INSERT}
-                          maxLength={500}
-                          name="status"
-                          allowClear
-                          addonAfter={<i className="fa fa-envelope fa-fw"/>}
-                          placeholder={this.trans("product:placeholder.status")}
-                          onChange={this.onChangeSelectCustom("status")}
-                          defaultValue={this.state.data.status}
-                  >
-                    <Option key={1} value={1}>{this.trans("common.active")}</Option>
-                    <Option key={0} value={0}>{this.trans("common.inactive")}</Option>
-                  </Select>
-                  <span className="errorMessage">
-                    {this.state.errors["status"]}
-                  </span>
-                </div>
+
                 <div className="col-md-6">
                   <Label>{this.trans("users:password")}: <span style={{color: 'red'}}> *</span></Label>
                   <Input.Password
@@ -184,7 +171,7 @@ class DetailForm extends BaseComponent {
                     name="password"
                     allowClear
                     addonAfter={<i className="fa fa-lock fa-fw"
-                                   style={this.state.errors["username"] ? {color: 'red'} : null}/>}
+                                   style={this.state.errors["password"] ? {color: 'red'} : null}/>}
                     placeholder={this.trans("users:placeholder.password")}
                     onChange={this.onChangeTextFieldCustom.bind(this, "password")}
                     defaultValue={this.state.data.password}
@@ -203,7 +190,7 @@ class DetailForm extends BaseComponent {
                     allowClear
                     validateStatus="error"
                     addonAfter={<i className="fa fa-envelope fa-fw"
-                                   style={this.state.errors["username"] ? {color: 'red'} : null}/>}
+                                   style={this.state.errors["email"] ? {color: 'red'} : null}/>}
                     placeholder={this.trans("users:placeholder.email")}
                     onChange={this.onChangeTextFieldCustom.bind(this, "email")}
                     defaultValue={this.state.data.email}
@@ -255,6 +242,8 @@ class DetailForm extends BaseComponent {
             color="primary"
             hidden={this.state.disabledAll}
             onClick={this.onSubmit}
+            disabled={this.state.disabled}
+            onDoubleClick={() => showMessageBox("Đang thực hiện. Vui lòng đợi", "Thông báo")}
           ><i className="fa fa-plus-circle"/>&nbsp;
             {this.trans("common.save")}
           </Button>

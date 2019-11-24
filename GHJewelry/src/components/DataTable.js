@@ -3,6 +3,7 @@ import {Table, Button} from 'antd';
 import BaseComponent from "./BaseComponent";
 import {withTranslation} from "react-i18next";
 import Constants from "../configs/Constants";
+import {showMessageBox} from "./MessageBox";
 
 
 class DataTable extends BaseComponent {

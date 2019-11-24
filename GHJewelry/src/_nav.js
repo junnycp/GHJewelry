@@ -63,6 +63,24 @@ export default {
         text: 'READY FOR TEST',
       }
     },
+    {
+      title: true,
+      name: 'Orders',
+      wrapper: {            // optional wrapper object
+        element: '',        // required valid HTML5 element tag
+        attributes: {}        // optional valid JS object with JS API naming ex: { className: "my-class", style: { fontFamily: "Verdana" }, id: "my-id"}
+      },
+      class: ''             // optional class names space delimited list for title item ex: "text-center"
+    },
+    {
+      name: 'Orders',
+      url: '/orders',
+      icon: 'fa fa-fax',
+      badge: {
+        variant: 'success',
+        // text: 'READY FOR TEST',
+      }
+    },
       {
         title: true,
         name: 'Theme',

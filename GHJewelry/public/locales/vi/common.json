@@ -49,6 +49,7 @@
       "isNumber": "{{field}} phải là số",
       "parent": "Không thể là cha của chính nó",
       "invalidEmail": "Sai định dạng email.",
+      "invalidPhone": "Sai định dạng số điện thoại.",
       "comparisonDate": "Ngày kết thúc phải lớn hơn ngày bắt đầu",
       "comparisonTime": "Giờ kết thúc phải lớn hơn giờ bắt đầu",
       "fromDate": "Ngày bắt đầu không được nhỏ hơn ngày hiện tại",
