@@ -28,8 +28,7 @@ public class ProductController {
     }
 
     @RequestMapping(value = "product/{idCategory}", method = RequestMethod.GET)
-    public @ResponseBody
-    ResponseEntity<?> getByCategory(@PathVariable String idCategory) {
+    public ResponseEntity<?> getByCategory(@PathVariable String idCategory) {
         MessageResponse mess = new MessageResponse();
         mess.setData(productService.finByCategory(idCategory));
         return new ResponseEntity<>(mess, HttpStatus.OK);

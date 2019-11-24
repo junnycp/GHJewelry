@@ -1,5 +1,6 @@
 package com.codershop.shoppinganywhere.controller;
 
+import com.codershop.shoppinganywhere.common.service.JpaGenericService;
 import com.codershop.shoppinganywhere.model.MessageResponse;
 import com.codershop.shoppinganywhere.model.User;
 import com.codershop.shoppinganywhere.service.UserService;
@@ -16,12 +17,13 @@ public class UserController {
     UserService userService;
 
     @RequestMapping(value = "user/getAll", method = RequestMethod.GET)
-    public ResponseEntity<List<User>> getAll() {
+    @ResponseBody
+    public ResponseEntity<Object> getAll() {
         MessageResponse mess = new MessageResponse();
         List<User> userList = userService.getAllUser();
         mess.setData(userList);
         mess.setMessage("Đã lấy thông tin khách hàng thành công");
-        return new ResponseEntity(mess, HttpStatus.OK);
+        return new ResponseEntity<>(mess, HttpStatus.OK);
     }
 
     @RequestMapping(value = "user/insert", method = RequestMethod.POST)
@@ -50,11 +52,20 @@ public class UserController {
         return new ResponseEntity(mess, HttpStatus.OK);
     }
     @RequestMapping(value = "user/findByID", method = RequestMethod.GET)
+    @ResponseBody
     public ResponseEntity<?> findById(@RequestParam Long idUser) {
         MessageResponse mess = new MessageResponse();
         User user = userService.findById(idUser);
         mess.setData(user);
         mess.setMessage("Đã tìm thấy ID: " + idUser + " của khách hàng thành công");
         return new ResponseEntity(mess, HttpStatus.OK);
+    }
+
+    @RequestMapping(value = "user/findByExample", method = RequestMethod.POST)
+    @ResponseBody
+    public ResponseEntity<Object> findByExample(@RequestBody User user) {
+        MessageResponse mess = new MessageResponse();
+        mess.setData(userService.finByExample(user));
+        return new ResponseEntity<>(mess, HttpStatus.OK);
     }
 }

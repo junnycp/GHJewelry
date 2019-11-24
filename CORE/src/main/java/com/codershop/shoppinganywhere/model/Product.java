@@ -1,11 +1,14 @@
 package com.codershop.shoppinganywhere.model;
 
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+
 import javax.persistence.*;
 
 import static javax.persistence.GenerationType.IDENTITY;
 
 @Entity
 @Table(name = "products", catalog = "datawebbh")
+@JsonPropertyOrder({"idProduct", "idCategory", "nameProduct", "size", "price", "note", "image"})
 public class Product {
     @Id
     @GeneratedValue(strategy = IDENTITY)

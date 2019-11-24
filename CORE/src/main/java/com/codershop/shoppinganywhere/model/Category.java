@@ -1,5 +1,7 @@
 package com.codershop.shoppinganywhere.model;
 
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -7,6 +9,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "categories", catalog = "datawebbh")
+@JsonPropertyOrder({"idCategory", "nameCategory", "idProduct"})
 public class Category {
     @Id
     @Column(name = "id_category", unique = true, nullable = false)

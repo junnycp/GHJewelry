@@ -3,6 +3,7 @@ package com.codershop.shoppinganywhere.dao.Impl;
 import com.codershop.shoppinganywhere.common.generics.impl.GenericDaoImpl;
 import com.codershop.shoppinganywhere.common.utils.ValidationUtil;
 import com.codershop.shoppinganywhere.dao.ProductDao;
+import com.codershop.shoppinganywhere.dao.repo.ProductRepo;
 import com.codershop.shoppinganywhere.model.Product;
 import org.springframework.stereotype.Repository;
 
@@ -16,15 +17,15 @@ import java.util.List;
 @Repository
 public class ProductDaoImpl extends GenericDaoImpl<Product, Integer> implements ProductDao {
     private final EntityManager em;
-
-    public ProductDaoImpl(EntityManager em) {
+    private final ProductRepo productRepo;
+    public ProductDaoImpl(EntityManager em,ProductRepo productRepo) {
         this.em = em;
+        this.productRepo = productRepo;
     }
 
     @Override
     public List<Product> getAllProduct() {
-        String sql = "select * from products";
-        return (List<Product>) em.createNativeQuery(sql).getResultList();
+        return productRepo.getAllProduct();
     }
 
     @Override

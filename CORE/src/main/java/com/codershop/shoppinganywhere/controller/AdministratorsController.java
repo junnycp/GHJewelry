@@ -9,6 +9,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.security.NoSuchAlgorithmException;
 import java.util.List;
 import java.util.Map;
 
@@ -18,9 +19,9 @@ public class AdministratorsController {
     AdministratorService administratorService;
 
     @RequestMapping(value = "admin/login", method = RequestMethod.POST)
-    public @ResponseBody ResponseEntity<Administrator> login(@RequestBody Map map) throws AuthenticationFailedException {
+    public @ResponseBody ResponseEntity<Administrator> login(@RequestBody Administrator administrator) throws AuthenticationFailedException, NoSuchAlgorithmException {
         MessageResponse mess = new MessageResponse();
-        Administrator administrator = administratorService.authentication(map.get("username").toString(), map.get("password").toString());
+        administratorService.authentication(administrator.getUserName(),administrator.getPassword());
         System.out.println(administrator.getUserName());
         if (administrator != null) {
             mess.setCode("LOGIN");

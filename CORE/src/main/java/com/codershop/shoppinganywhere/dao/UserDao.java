@@ -12,4 +12,5 @@ public interface UserDao extends GenericDao<User, Integer> {
     User update(User user);
     boolean delete(Long idUser);
     User findById(Long idUser);
+    List<User> findByExample(User user);
 }
