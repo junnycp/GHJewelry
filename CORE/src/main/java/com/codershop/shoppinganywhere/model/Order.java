@@ -1,5 +1,7 @@
 package com.codershop.shoppinganywhere.model;
 
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+
 import javax.persistence.*;
 import java.util.Date;
 
@@ -7,6 +9,7 @@ import static javax.persistence.GenerationType.IDENTITY;
 
 @Entity
 @Table(name = "shop_orders", catalog = "datawebbh")
+@JsonPropertyOrder({"idOrder", "idUser", "idProduct", "quantity", "amount", "created"})
 public class Order {
     @Id
     @GeneratedValue(strategy = IDENTITY)

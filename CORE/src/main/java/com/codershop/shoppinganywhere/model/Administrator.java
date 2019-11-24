@@ -1,5 +1,7 @@
 package com.codershop.shoppinganywhere.model;
 
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+
 import javax.persistence.*;
 
 import java.io.Serializable;
@@ -8,6 +10,7 @@ import static javax.persistence.GenerationType.IDENTITY;
 
 @Entity
 @Table(name = "administrators", catalog = "datawebbh")
+@JsonPropertyOrder({"id_admin", "userName", "password"})
 public class Administrator implements Serializable {
     @Id
     @GeneratedValue(strategy = IDENTITY)

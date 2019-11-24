@@ -9,7 +9,6 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @EnableJpaRepositories("com.codershop.*")
 @EntityScan("com.codershop.*")
 public class ShoppinganywhereApplication {
-
     public static void main(String[] args) {
         SpringApplication.run(ShoppinganywhereApplication.class, args);
     }

@@ -3,6 +3,7 @@ package com.codershop.shoppinganywhere.dao.Impl;
 import com.codershop.shoppinganywhere.common.generics.impl.GenericDaoImpl;
 import com.codershop.shoppinganywhere.common.utils.ValidationUtil;
 import com.codershop.shoppinganywhere.dao.CategoryDao;
+import com.codershop.shoppinganywhere.dao.repo.CategoryRepo;
 import com.codershop.shoppinganywhere.model.Category;
 import org.springframework.stereotype.Repository;
 
@@ -15,15 +16,16 @@ import java.util.List;
 @Repository
 public class CategoryDaoImpl extends GenericDaoImpl<Category, Integer> implements CategoryDao {
     private final EntityManager em;
+    private CategoryRepo categoryRepo;
 
-    public CategoryDaoImpl(EntityManager em) {
+    public CategoryDaoImpl(EntityManager em, CategoryRepo categoryRepo) {
         this.em = em;
+        this.categoryRepo = categoryRepo;
     }
 
     @Override
     public List<Category> getAllCategory() {
-        String sql = "select *from categories";
-        return (List<Category>) em.createNativeQuery(sql).getResultList();
+        return categoryRepo.getAllCategory();
     }
 
     @Override

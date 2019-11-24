@@ -10,4 +10,5 @@ public interface UserService {
     User update(User user);
     boolean delete(Long idUser);
     User findById(Long idUser);
+    List<User> finByExample(User user);
 }
