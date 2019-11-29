@@ -13,6 +13,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.io.Serializable;
@@ -66,8 +67,8 @@ public class JpaGenericServiceImpl<E, P extends Serializable> implements JpaGene
     }
 
     @Override
-    public List<E> saveByBatch(List<E> items) {
-        return genericRepos.saveAll(items);
+    public void saveByBatch(List<E> items) {
+        genericRepos.saveAll(items);
     }
 
     @Override
@@ -81,11 +82,8 @@ public class JpaGenericServiceImpl<E, P extends Serializable> implements JpaGene
     }
 
     @Override
-    public Page<E> findPage(int page, int size, List<OrderBy> orderBys) {
-        if (orderBys == null || orderBys.isEmpty()) {
-            return genericRepos.findAll(PageRequest.of(page, size));
-        }
-        return genericRepos.findAll(PageRequest.of(page, size, SortUtil.buildSort(orderBys)));
+    public Page<E> findPage(int page, int size) {
+        return genericRepos.findAll(PageRequest.of(page, size));
     }
 
     @Override
@@ -121,10 +119,5 @@ public class JpaGenericServiceImpl<E, P extends Serializable> implements JpaGene
             return genericRepos.findAll();
         }
         return genericRepos.findAll(Sort.by(SortUtil.buildOrders(orderBys)));
-    }
-
-    @Override
-    public boolean existsById(P key) {
-        return genericRepos.existsById(key);
     }
 }

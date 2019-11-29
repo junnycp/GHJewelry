@@ -7,7 +7,6 @@ import Label from "../../components/Label";
 import DataTable from "../../components/DataTable";
 import {showConfirm, showMessageBox} from "../../components/MessageBox";
 import ActionFormatter from "../../components/ActionFormatter";
-import StatusFormatter from "../../components/StatusFormatter";
 import {hideDialog, showDialog} from "../../components/Dialog";
 import Constants from "../../configs/Constants";
 import DetailForm from "../UsersManagement/DetailForm";
@@ -56,8 +55,7 @@ class UsersManagement extends BaseComponent {
 
   onOpenInsert = () => {
     showDialog(
-      this.getDetailForm(Constants.ACTION.INSERT, {
-      }),
+      this.getDetailForm(Constants.ACTION.INSERT, {}),
       this.trans("common.addNew")
     )
   };
@@ -79,9 +77,9 @@ class UsersManagement extends BaseComponent {
   };
 
   onDelete = async row => {
-      await this.service.delete(row.idUser);
-      showMessageBox(this.trans("common.message.deleteSuccess"));
-      this.onFetchUsers();
+    await this.service.delete(row.idUser);
+    showMessageBox(this.trans("common.message.deleteSuccess"));
+    this.onFetchUsers();
   };
 
   genActionCol = (cell, row) => {
@@ -119,8 +117,14 @@ class UsersManagement extends BaseComponent {
     ];
   };
 
-  onSearch = () => {
-    console.log(this.state.data);
+  onSearch = async () => {
+    let result = await this.service.search(this.state.data);
+    if (result.data.length === 0) {
+      showMessageBox("Không tìm thấy kết quả!")
+    }
+    this.setState({
+      lstUser: result.data
+    });
     openNotification('success', this.trans("common.message.found"), this.trans("users:message.found", {result: this.state.lstUser.length}));
   };
 
@@ -209,7 +213,8 @@ class UsersManagement extends BaseComponent {
               />
             </div>
             <div className="col-md-12" style={{textAlign: "right", marginTop: 10}}>
-              <Button type="primary" onClick={this.onSearch}><i className="fa fa-search"/>&nbsp;{this.trans("common.search")}</Button>
+              <Button type="primary" onClick={this.onSearch}><i
+                className="fa fa-search"/>&nbsp;{this.trans("common.search")}</Button>
             </div>
           </div>
         </DisplayBox>

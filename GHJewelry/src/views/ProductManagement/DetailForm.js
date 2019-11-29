@@ -2,11 +2,12 @@ import React from 'react';
 import BaseComponent from "../../components/BaseComponent";
 import {withTranslation} from "react-i18next";
 import {ModalBody, ModalFooter} from "reactstrap";
-import {Icon, Input, Select} from 'antd';
+import {Icon, Input, Modal, Select, Upload} from 'antd';
 import Label from "../../components/Label";
 import Button from "../../components/Button";
 import ProductManagementService from "../../services/ProductManagementService";
 import Constants from "../../configs/Constants";
+import {showMessageBox} from "../../components/MessageBox";
 
 const Option = Select.Option;
 const TextArea = Input.TextArea;
@@ -15,6 +16,18 @@ class DetailForm extends BaseComponent {
   constructor(props) {
     super(props);
     this.service = new ProductManagementService();
+    this.state = {
+      previewVisible: false,
+      previewImage: '',
+      fileList: [
+        {
+          uid: '-1',
+          name: 'image.png',
+          status: 'done',
+          url: 'http://product.hstatic.net/1000213320/product/img_2936_copy_master.jpg',
+        }
+      ]
+    }
   }
 
   componentWillMount() {
@@ -53,10 +66,16 @@ class DetailForm extends BaseComponent {
     let data = this.state.data;
     let errors = {};
     let formIsValid = true;
-    if (!data["name"]) {
+    if (!data["nameProduct"]) {
       formIsValid = false;
-      errors["name"] = this.trans("common.message.notEmpty", {
+      errors["nameProduct"] = this.trans("common.message.notEmpty", {
         field: this.trans("product:name")
+      })
+    }
+    if (!data["idCategory"]) {
+      formIsValid = false;
+      errors["idCategory"] = this.trans("common.message.notEmpty", {
+        field: this.trans("category:name")
       })
     }
     if (!data["price"]) {
@@ -78,17 +97,17 @@ class DetailForm extends BaseComponent {
   onSubmit = () => {
     if (this.validate()) {
       if (this.state.action === Constants.ACTION.UPDATE) {
-        // this.service.update(this.state.data, () => {
-        //   showMessageBox(this.trans("common.message.updateSuccess"));
-        //   this.props.options.onComplete();
-        // })
+        this.service.update(this.state.data, () => {
+          showMessageBox(this.trans("common.message.updateSuccess"));
+          this.props.options.onComplete();
+        })
       }
       if (this.state.action === Constants.ACTION.INSERT) {
         console.log("data insert", this.state.data);
-        // this.service.insert(this.state.data, () => {
-        //   showMessageBox(this.trans("common.message.updateSuccess"));
-        //   this.props.options.onComplete();
-        // })
+        this.service.insert(this.state.data, () => {
+          showMessageBox(this.trans("common.message.insertSuccess"));
+          this.props.options.onComplete();
+        })
       }
     }
   };
@@ -115,7 +134,40 @@ class DetailForm extends BaseComponent {
     }))
   };
 
+  getBase64 = (file) => {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.readAsDataURL(file);
+      reader.onload = () => resolve(reader.result);
+      reader.onerror = error => reject(error);
+    });
+  };
+
+  handleCancel = () => {
+    this.setState({previewVisible: false})
+  };
+
+  handlePreview = async file => {
+    if (!file.url && !file.preview) {
+      file.preview = await this.getBase64(file.originFileObj)
+    }
+    this.setState({
+      previewImage: file.url || file.preview,
+      previewVisible: true
+    });
+  };
+
+  handleChange = ({fileList}) => this.setState({fileList});
+
   render() {
+    const {previewVisible, previewImage, fileList} = this.state;
+    const uploadButton = (
+      <div>
+        <Icon type="plus"/>
+        <div className="ant-upload-text">Upload</div>
+      </div>
+    );
+    console.log("fileList", fileList);
     return (
       <div>
         <ModalBody>
@@ -124,35 +176,38 @@ class DetailForm extends BaseComponent {
               <div className="row">
                 <div className="col-md-6">
                   <Label>{this.trans("product:name")}: <span style={{color: 'red'}}> *</span></Label>
-                  <Input id="name"
+                  <Input id="nameProduct"
                          disabled={this.state.disabledAll}
                          maxLength={500}
-                         name="name"
+                         name="nameProduct"
                          allowClear
-                         addonAfter={<i className="fa fa-cubes fa-fw" style={this.state.errors["name"] ? {color: 'red'} : null}/>}
+                         addonAfter={<i className="fa fa-cubes fa-fw"
+                                        style={this.state.errors["nameProduct"] ? {color: 'red'} : null}/>}
                          placeholder={this.trans("product:placeholder.name")}
-                         onChange={this.onChangeTextField.bind(this, "name")}
-                         defaultValue={this.state.data.name}
+                         onChange={this.onChangeTextField.bind(this, "nameProduct")}
+                         defaultValue={this.state.data.nameProduct}
                   />
                   <span className="errorMessage">
-                    {this.state.errors["name"]}
+                    {this.state.errors["nameProduct"]}
                   </span>
                 </div>
                 <div className="col-md-6">
-                  <Label>{this.trans("product:status")}: <span style={{color: 'red'}}> *</span></Label>
-                  <Select id="status"
-                          disabled={this.state.disabledAll || this.state.action === Constants.ACTION.INSERT}
+                  <Label>{this.trans("category:name")}: <span style={{color: 'red'}}> *</span></Label>
+                  <Select id="idCategory"
+                          disabled={this.state.disabledAll}
                           maxLength={500}
-                          name="status"
-                          placeholder={this.trans("product:placeholder.status")}
-                          onChange={this.onChangeSelect("status")}
-                          defaultValue={this.state.data.status}
+                          name="idCategory"
+                          placeholder={this.trans("category:placeholder.selectName")}
+                          onChange={this.onChangeSelect("idCategory")}
+                          value={this.state.data.idCategory}
                   >
-                    <Option key={1} value={1}>{this.trans("common.active")}</Option>
-                    <Option key={0} value={0}>{this.trans("common.inactive")}</Option>
+                    {this.props.options.lstCategory.map((category) => (
+                      <Option key={category.idCategory}
+                              value={category.idCategory}>{category.nameCategory}</Option>
+                    ))}
                   </Select>
                   <span className="errorMessage">
-                    {this.state.errors["status"]}
+                    {this.state.errors["idCategory"]}
                   </span>
                 </div>
                 <div className="col-md-6" style={{marginTop: 5}}>
@@ -162,8 +217,9 @@ class DetailForm extends BaseComponent {
                          maxLength={500}
                          name="price"
                          allowClear
-                         addonAfter={<i className="fa fa-dollar fa-fw" style={this.state.errors["price"] ? {color: 'red'} : null}/>}
-                         placeholder={this.trans("product:placeholder.price")}
+                         addonAfter={<i className="fa fa-dollar fa-fw"
+                                        style={this.state.errors["price"] ? {color: 'red'} : null}/>}
+                         placeholder={this.trans("product:placeholder.insertPrice")}
                          onChange={this.onChangeTextField.bind(this, "price")}
                          defaultValue={this.state.data.price}
                   />
@@ -181,14 +237,16 @@ class DetailForm extends BaseComponent {
                           onChange={this.onChangeSelect("size")}
                           defaultValue={this.state.data.size}
                   >
-                    <Option key={1} value={1}>{this.trans("common.active")}</Option>
-                    <Option key={0} value={0}>{this.trans("common.inactive")}</Option>
+                    <Option key={0} value={'S'}>S</Option>
+                    <Option key={1} value={'M'}>M</Option>
+                    <Option key={2} value={'L'}>L</Option>
+                    <Option key={3} value={'XL'}>XL</Option>
                   </Select>
                   <span className="errorMessage">
                     {this.state.errors["size"]}
                   </span>
                 </div>
-                <div className="col-md-12" style={{marginTop: 5}}>
+                <div className="col-md-6" style={{marginTop: 5}}>
                   <Label>{this.trans("product:note")}: <span style={{color: 'red'}}> *</span></Label>
                   <TextArea id="note"
                             disabled={this.state.disabledAll}
@@ -202,6 +260,23 @@ class DetailForm extends BaseComponent {
                   <span className="errorMessage">
                     {this.state.errors["note"]}
                   </span>
+                </div>
+                <div className="col-md-6" style={{marginTop: 5}}>
+                  <Label>{this.trans("product:picture")}: <span style={{color: 'red'}}> *</span></Label>
+                  <div className="clearfix">
+                    <Upload
+                      action="https://www.mocky.io/v2/5185415ba171ea3a00704eed"
+                      listType="picture-card"
+                      fileList={fileList}
+                      onPreview={this.handlePreview}
+                      onChange={this.handleChange}
+                    >
+                      {fileList.length >= 2 ? null : uploadButton}
+                    </Upload>
+                    <Modal visible={previewVisible} footer={null} onCancel={this.handleChange}>
+                      <img alt="example" style={{width: '100%'}} src={previewImage}/>
+                    </Modal>
+                  </div>
                 </div>
               </div>
             </form>
@@ -224,4 +299,4 @@ class DetailForm extends BaseComponent {
   }
 }
 
-export default withTranslation(["common", "product"])(DetailForm);
+export default withTranslation(["common", "product", "category"])(DetailForm);

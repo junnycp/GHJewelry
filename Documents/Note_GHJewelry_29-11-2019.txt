@@ -1,0 +1,28 @@
+	order{
+		id_order: 1,
+		id_user: "USER1",
+		id_shipper: "SHIPPER1",
+		listProduct: [
+			{
+				id_product: 2,
+				quantity: 5,
+				amount: 5000
+			},
+			{
+				id_product: 5,
+				quantity: 2,
+				amount: 6000
+			}
+					]
+	}
+	
+	***listProduct = cart***
+	
+	cart:{
+	[
+		id_product: 1,
+		quantity: 2
+	]
+	}
+	
+	TẠO THÊM BẢNG listProduct(Order Detail)

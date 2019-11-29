@@ -1,0 +1,1 @@
+package com.codershop.shoppinganywhere.common.dao;import com.codershop.shoppinganywhere.common.entity.LogApi;import com.codershop.shoppinganywhere.common.generics.GenericDao;public interface LogApiDao extends GenericDao<LogApi,Integer> {}

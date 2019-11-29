@@ -23,17 +23,16 @@ public interface JpaGenericService<E , P extends Serializable> {
 
     List<E> queryAllAndSort(List<OrderBy> orderBys);
 
-    List<E> saveByBatch(List<E> items);
+    void saveByBatch(List<E> items);
 
     List<E> findByExample(E e);
 
     List<E> findLimit(int numberSkip, int limit);
 
-    Page<E> findPage(int numberSkip, int limit, List<OrderBy> orderBys);
+    Page<E> findPage(int numberSkip, int limit);
 
     Object query(QueryRequest<E> request);
 
     Object queryByExamplePageAndSort(E e, Paging pageInfo, List<OrderBy> orderBys);
 
-    boolean existsById(P key);
 }

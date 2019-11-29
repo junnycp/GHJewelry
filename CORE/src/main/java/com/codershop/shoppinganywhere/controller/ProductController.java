@@ -1,6 +1,6 @@
 package com.codershop.shoppinganywhere.controller;
 
-import com.codershop.shoppinganywhere.model.MessageResponse;
+import com.codershop.shoppinganywhere.model.MessagesResponse;
 import com.codershop.shoppinganywhere.model.Product;
 import com.codershop.shoppinganywhere.service.ProductService;
 import org.slf4j.Logger;
@@ -20,7 +20,7 @@ public class ProductController {
 
     @RequestMapping(value = "product/getAll", method = RequestMethod.GET)
     public ResponseEntity<List<Product>> getAll() {
-        MessageResponse mess = new MessageResponse();
+        MessagesResponse mess = new MessagesResponse();
         List<Product> productsList = productService.getAllProduct();
         mess.setData(productsList);
         mess.setMessage("Đã lấy tất cả sản phẩm thành công");
@@ -29,22 +29,22 @@ public class ProductController {
 
     @RequestMapping(value = "product/{idCategory}", method = RequestMethod.GET)
     public ResponseEntity<?> getByCategory(@PathVariable String idCategory) {
-        MessageResponse mess = new MessageResponse();
+        MessagesResponse mess = new MessagesResponse();
         mess.setData(productService.finByCategory(idCategory));
         return new ResponseEntity<>(mess, HttpStatus.OK);
     }
 
     @RequestMapping(value = "product/insert", method = RequestMethod.POST)
-    public ResponseEntity<Product> insertUser(@RequestBody Product product) {
-        MessageResponse mess = new MessageResponse();
+    public ResponseEntity<Product> insertProduct(@RequestBody Product product) {
+        MessagesResponse mess = new MessagesResponse();
         mess.setData(productService.insert(product));
         mess.setMessage("Đã thêm sản phẩm thành công");
         return new ResponseEntity(mess, HttpStatus.OK);
     }
 
     @RequestMapping(value = "product/update", method = RequestMethod.POST)
-    public ResponseEntity<Product> updateUser(@RequestBody Product product) {
-        MessageResponse mess = new MessageResponse();
+    public ResponseEntity<Product> updateProduct(@RequestBody Product product) {
+        MessagesResponse mess = new MessagesResponse();
         if (product.getIdProduct() != null) {
             mess.setData(productService.update(product));
             mess.setMessage("Đã thay đổi thông tin sản phẩm thành công");
@@ -53,8 +53,8 @@ public class ProductController {
     }
 
     @RequestMapping(value = "product/delete", method = RequestMethod.GET)
-    public ResponseEntity<?> deleteUser(@RequestParam Long idProduct) {
-        MessageResponse mess = new MessageResponse();
+    public ResponseEntity<?> deleteProduct(@RequestParam Long idProduct) {
+        MessagesResponse mess = new MessagesResponse();
         mess.setData(productService.delete(idProduct));
         mess.setMessage("Đã xóa ID: " + idProduct + " sản phẩm thành công");
         return new ResponseEntity(mess, HttpStatus.OK);
@@ -62,7 +62,7 @@ public class ProductController {
 
     @RequestMapping(value = "product/findByID", method = RequestMethod.GET)
     public ResponseEntity<?> findById(@RequestParam Long idProduct) {
-        MessageResponse mess = new MessageResponse();
+        MessagesResponse mess = new MessagesResponse();
         Product user = productService.findById(idProduct);
         mess.setData(user);
         mess.setMessage("Đã tìm thấy ID: " + idProduct + " thành công");

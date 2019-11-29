@@ -1,0 +1,20 @@
+{
+  "title": "Shipper Management",
+  "idShipper": "Shipper ID",
+  "idCard": "ID Num",
+  "name": "Shipper's Name",
+  "email": "Email",
+  "phone": "Phone Number",
+  "address": "Adresss",
+  "placeholder": {
+    "idShipper": "Type in Shipper ID",
+    "idCard": "Type in ID number",
+    "name": "Type in Name",
+    "email": "Type in Email",
+    "phone": "Type in Phone Number",
+    "address": "Type in Address"
+  },
+  "message": {
+    "found": "Found {{result}} shipper!"
+  }
+}

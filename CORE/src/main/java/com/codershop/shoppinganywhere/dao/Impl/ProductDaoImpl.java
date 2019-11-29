@@ -77,7 +77,7 @@ public class ProductDaoImpl extends GenericDaoImpl<Product, Integer> implements 
                 product.setIdProduct(!ValidationUtil.isNull(idProduct) ? idProduct.longValue() :  null);
                 product.setIdCategory(tuple.get("id_category", String.class));
                 product.setNameProduct(tuple.get("name", String.class));
-                product.setPrice(!ValidationUtil.isNull(priceProduct)?  priceProduct.floatValue() : null);
+                product.setPrice(!ValidationUtil.isNull(priceProduct)?  priceProduct.toString() : null);
                 productList.add(product);
             }
         }

@@ -1,9 +1,11 @@
 {
   "title": "Category Management",
   "name": "Category Name",
+  "categoryId": "Category ID",
   "placeholder": {
     "insertName": "Type in Category Name",
-    "selectName": "Choose category"
+    "selectName": "Choose category",
+    "insertCategoryId": "Type in Category ID"
   },
   "message":{
     "found": "Found {{result}} categories"

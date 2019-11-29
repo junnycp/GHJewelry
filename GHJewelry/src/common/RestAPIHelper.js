@@ -130,7 +130,7 @@ const RestAPIHelper = {
         }
     ) {
         showProgress();
-        return fetch(Constants.API_URL + "login", {
+        return fetch(Constants.API_URL + "admin/login", {
             method: "POST",
             headers: {
                 Accept: "application/json",

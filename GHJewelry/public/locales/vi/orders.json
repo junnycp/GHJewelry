@@ -1,0 +1,18 @@
+{
+  "title": "Quản lý hóa đơn",
+  "orderId": "Mã hóa đơn",
+  "userId": "Mã khách hàng",
+  "productId": "Mã sản phẩm",
+  "quantity": "Số lượng",
+  "totalMoney": "Tổng tiền",
+  "createdDate": "Ngày tạo",
+  "placeholder": {
+    "orderId": "Nhập mã hóa đơn",
+    "userId": "Nhập mã khách hàng",
+    "productId": "Nhập mã sản phẩm",
+    "createdDate": "Chọn ngày tạo"
+  },
+  "message": {
+    "found": "Đã tìm thấy {{result}} hóa đơn"
+  }
+}

@@ -4,11 +4,13 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 import javax.persistence.*;
 
+import java.util.Date;
+
 import static javax.persistence.GenerationType.IDENTITY;
 
 @Entity
 @Table(name = "users", catalog = "datawebbh")
-@JsonPropertyOrder({"idUser", "userName", "password", "email", "phone", "address"})
+@JsonPropertyOrder({"idUser", "userName", "password", "email", "phone", "address", "createTime"})
 public class User {
     @Id
     @GeneratedValue(strategy = IDENTITY)
@@ -24,18 +26,8 @@ public class User {
     private String phone;
     @Column(name = "address")
     private String address;
-
-    public User(Long idUser, String userName, String password, String email, String phone, String address) {
-        this.idUser = idUser;
-        this.userName = userName;
-        this.password = password;
-        this.email = email;
-        this.phone = phone;
-        this.address = address;
-    }
-
-    public User() {
-    }
+    @Column(name= "create_time")
+    private Date createTime;
 
     public Long getIdUser() {
         return idUser;
@@ -83,5 +75,13 @@ public class User {
 
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
     }
 }

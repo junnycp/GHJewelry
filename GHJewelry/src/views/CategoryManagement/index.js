@@ -11,7 +11,7 @@ import StatusFormatter from "../../components/StatusFormatter";
 import {hideDialog, showDialog} from "../../components/Dialog";
 import Constants from "../../configs/Constants";
 import DetailForm from "../CategoryManagement/DetailForm";
-import UsersManagementService from "../../services/UsersManagementService";
+import CategoryManagementService from "../../services/CategoryManagementService";
 import openNotification from "../../components/Notification";
 
 const Option = Select.Option;
@@ -20,7 +20,7 @@ const {Meta} = Card;
 class UsersManagement extends BaseComponent {
   constructor(props) {
     super(props);
-    this.service = new UsersManagementService();
+    this.service = new CategoryManagementService();
     this.state = {
       lstCategory: [],
       data: {}
@@ -28,7 +28,7 @@ class UsersManagement extends BaseComponent {
   }
 
   componentWillMount = () => {
-    this.onFetchUsers();
+    this.onFetchCategory();
   };
 
   getDetailForm(_action, _data) {
@@ -39,7 +39,7 @@ class UsersManagement extends BaseComponent {
           data: _data,
           onComplete: () => {
             hideDialog(false);
-            this.onFetchUsers();
+            this.onFetchCategory();
           },
           onCancel: () => {
             hideDialog();
@@ -71,8 +71,8 @@ class UsersManagement extends BaseComponent {
     )
   };
 
-  onFetchUsers = async () => {
-    let result = await this.service.fetchUsers();
+  onFetchCategory = async () => {
+    let result = await this.service.fetchCategory();
     if (result) {
       this.setState({
         lstCategory: result.data
@@ -107,7 +107,8 @@ class UsersManagement extends BaseComponent {
     return [
       {title: this.trans("common.num"), key: 'stt', render: (text, record, index) => index + 1},
       {title: this.trans("common.action"), key: 'action', render: this.genActionCol},
-      {title: this.trans("category:name"), dataIndex: 'name', key: 'name'},
+      {title: this.trans("category:categoryId"), dataIndex: 'idCategory', key: 'idCategory'},
+      {title: this.trans("category:name"), dataIndex: 'nameCategory', key: 'nameCategory'},
     ];
   };
 
@@ -143,7 +144,7 @@ class UsersManagement extends BaseComponent {
       <div className="animated fadeIn">
         <DisplayBox title={<strong>{this.trans("common.search")}</strong>} expanded={true}>
           <div className="row">
-            <div className="col-md-8">
+            <div className="col-md-6" style={{marginBottom: 10}}>
               <Label>{this.trans("category:name")}</Label>
               <Input id="name"
                      maxLength={20}
@@ -154,9 +155,9 @@ class UsersManagement extends BaseComponent {
                      onChange={this.onChangeSelectCustom("name")}
               />
             </div>
-            <div className="col-md-4">
+            <div className="col-md-6">
               <Card hoverable
-                    style={{width: 400}}
+                    style={{width: '100%'}}
                     cover={<img alt="example"
                                 src="https://shopbylook.cf/storage/27rmzlqRihgWr3tqVmduzYbysHKF0wT7jdQjZziV.jpeg"/>}>
                 <Meta title="GH Jewelry" description="Cam kết hàng chính hãng chất lượng cao"/>

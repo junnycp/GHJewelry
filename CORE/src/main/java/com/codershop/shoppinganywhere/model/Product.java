@@ -21,24 +21,11 @@ public class Product {
     @Column(name = "size")
     private String size;
     @Column(name = "price")
-    private Float price;
+    private String price;
     @Column(name = "note")
     private String note;
     @Column(name = "image")
     private String image;
-
-    public Product(Long idProduct, String idCategory, String nameProduct, String size, Float price, String note, String image) {
-        this.idProduct = idProduct;
-        this.idCategory = idCategory;
-        this.nameProduct = nameProduct;
-        this.size = size;
-        this.price = price;
-        this.note = note;
-        this.image = image;
-    }
-
-    public Product() {
-    }
 
     public Long getIdProduct() {
         return idProduct;
@@ -72,11 +59,11 @@ public class Product {
         this.size = size;
     }
 
-    public Float getPrice() {
+    public String getPrice() {
         return price;
     }
 
-    public void setPrice(Float price) {
+    public void setPrice(String price) {
         this.price = price;
     }
 

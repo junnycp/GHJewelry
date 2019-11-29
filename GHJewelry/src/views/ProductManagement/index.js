@@ -1,5 +1,5 @@
 import React from 'react';
-import {Select, Input, Button, Icon, DatePicker, notification} from "antd";
+import {Select, Input, Button, Icon, DatePicker} from "antd";
 import BaseComponent from "../../components/BaseComponent";
 import {withTranslation} from "react-i18next";
 import DisplayBox from "../../components/DisplayBox";
@@ -22,18 +22,30 @@ class ProductManagement extends BaseComponent {
     this.service = new ProductManagementService();
     this.state = {
       lstProduct: [],
-      data: {}
+      lstCategory: [],
+      data: {},
     }
   }
 
   componentWillMount = () => {
     this.onFetchProduct();
+    this.onFetchCategory()
+  };
+
+  onFetchCategory = async () => {
+    let result = await this.service.fetchCategory();
+    if (result) {
+      this.setState({
+        lstCategory: result.data
+      })
+    }
   };
 
   getDetailForm(_action, _data) {
     return (
       <DetailForm
         options={{
+          lstCategory: this.state.lstCategory,
           action: _action,
           data: _data,
           onComplete: () => {
@@ -106,11 +118,21 @@ class ProductManagement extends BaseComponent {
     return [
       {title: 'STT', key: 'stt', render: (text, record, index) => index + 1},
       {title: this.trans("common.action"), key: 'action', render: this.genActionCol},
-      {title: this.trans("product:code"), dataIndex: 'code', key: 'code'},
-      {title: this.trans("product:name"), dataIndex: 'value', key: 'value'},
-      {title: this.trans("product:type"), dataIndex: 'type', key: 'type'},
+      {title: this.trans("product:code"), dataIndex: 'idProduct', key: 'idProduct'},
+      {title: this.trans("category:name"), dataIndex: 'idCategory', key: 'idCategory', render: this.genCategoryName},
+      {title: this.trans("product:name"), dataIndex: 'nameProduct', key: 'nameProduct'},
+      {title: this.trans("product:size"), dataIndex: 'size', key: 'size'},
+      {title: this.trans("product:price"), dataIndex: 'price', key: 'price'},
       {title: this.trans("product:status"), dataIndex: 'status', key: 'status', render: this.genStatusCol},
     ];
+  };
+
+  genCategoryName = (cell, row) => {
+    for (let category of this.state.lstCategory) {
+      if (cell === category.idCategory) {
+        return category.nameCategory;
+      }
+    }
   };
 
   onSearch = () => {
@@ -159,14 +181,16 @@ class ProductManagement extends BaseComponent {
             <div className="col-md-4">
               <Label>{this.trans("category:name")}:</Label>
               <Select id="category"
-                      maxLength={20}
+                      maxLength={30}
                       name="category"
                       allowClear
                       placeholder={this.trans("category:placeholder.selectName")}
                       onChange={this.onChangeSelectCustom("category")}
               >
-                <Option key={1} value={1}>Bracelet</Option>
-                <Option key={0} value={0}>Ring</Option>
+                {this.state.lstCategory.map((category) => (
+                  <Option key={category.idCategory}
+                          value={category.idCategory}>{category.nameCategory}</Option>
+                ))}
               </Select>
             </div>
             <div className="col-md-4">
@@ -196,11 +220,11 @@ class ProductManagement extends BaseComponent {
             <div className="col-md-4" style={{marginTop: 10}}>
               <Label>{this.trans("product:size")}:</Label>
               <Select id="size"
-                     maxLength={20}
-                     name="size"
-                     allowClear
-                     placeholder={this.trans("product:placeholder.size")}
-                     onChange={this.onChangeTextFieldCustom.bind(this, 'size')}
+                      maxLength={20}
+                      name="size"
+                      allowClear
+                      placeholder={this.trans("product:placeholder.size")}
+                      onChange={this.onChangeTextFieldCustom.bind(this, 'size')}
               >
                 <Option key={0} value={0}>S</Option>
                 <Option key={1} value={1}>M</Option>
@@ -222,7 +246,8 @@ class ProductManagement extends BaseComponent {
               </Select>
             </div>
             <div className="col-md-12" style={{textAlign: "right", marginTop: 10}}>
-              <Button type="primary" onClick={this.onSearch}><i className="fa fa-search"/>&nbsp;{this.trans("common.search")}</Button>
+              <Button type="primary" onClick={this.onSearch}><i
+                className="fa fa-search"/>&nbsp;{this.trans("common.search")}</Button>
             </div>
           </div>
         </DisplayBox>

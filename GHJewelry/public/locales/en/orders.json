@@ -1,0 +1,18 @@
+{
+  "title": "Order Management",
+  "orderId": "Order ID",
+  "userId": "User ID",
+  "productId": "Product ID",
+  "quantity": "Quantity",
+  "totalMoney": "Total money",
+  "createdDate": "Created Date",
+  "placeholder": {
+    "orderId": "Type in Order ID",
+    "userId": "Type in User ID",
+    "productId": "Type in Product ID",
+    "createdDate": "Select Created Date"
+  },
+  "message": {
+    "found": "Found {{result}} orders"
+  }
+}

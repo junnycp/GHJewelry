@@ -8,6 +8,7 @@
   "status": "Status",
   "createdDate": "Created Date",
   "note": "Note",
+  "picture": "Picture",
   "placeholder": {
     "code": "Type in Product ID",
     "name": "Type in Product Name",

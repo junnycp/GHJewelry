@@ -30,16 +30,14 @@ public class CategoryDaoImpl extends GenericDaoImpl<Category, Integer> implement
 
     @Override
     public List<Category> finByCategory(String idCategory) {
-        String sql = "SELECT  c.id_category, c.id_product, c.name FROM categories c where c.id_category= '" + idCategory + "' ORDER BY c.id_product asc";
+        String sql = "SELECT  c.id_category, c.name FROM categories c where c.id_category= '" + idCategory + "' ORDER BY c.id_category asc";
         List<Category> categorieList = new ArrayList<>();
         Query query = em.createNativeQuery(sql, Tuple.class);
         List<Tuple> lstResult = query.getResultList();
         if (!ValidationUtil.isNullOrEmpty(lstResult)) {
             for (Tuple tuple : lstResult) {
-                Integer idProduct = tuple.get("id_product", Integer.class);
                 Category category = new Category();
                 category.setIdCategory(tuple.get("id_category", String.class));
-                category.setIdProduct(!ValidationUtil.isNull(idProduct) ? idProduct.longValue() : null);
                 category.setNameCategory(tuple.get("name", String.class));
                 categorieList.add(category);
             }

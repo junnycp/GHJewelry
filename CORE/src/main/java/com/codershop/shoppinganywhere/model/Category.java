@@ -16,25 +16,6 @@ public class Category {
     private String idCategory;
     @Column(name = "name")
     private String nameCategory;
-    @Column(name = "id_product")
-    private Long idProduct;
-
-    public Category(String idCategory, String nameCategory,Long idProduct) {
-        this.idCategory = idCategory;
-        this.nameCategory = nameCategory;
-        this.idProduct = idProduct;
-    }
-
-    public Category() {
-    }
-
-    public Long getIdProduct() {
-        return idProduct;
-    }
-
-    public void setIdProduct(Long idProduct) {
-        this.idProduct = idProduct;
-    }
 
     public String getIdCategory() {
         return idCategory;

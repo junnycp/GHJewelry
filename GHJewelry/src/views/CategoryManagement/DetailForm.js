@@ -5,15 +5,16 @@ import {ModalBody, ModalFooter} from "reactstrap";
 import {Input, Select} from 'antd';
 import Label from "../../components/Label";
 import Button from "../../components/Button";
-import ProductManagementService from "../../services/UsersManagementService";
+import CategoryManagementService from "../../services/CategoryManagementService";
 import Constants from "../../configs/Constants";
+import {showMessageBox} from "../../components/MessageBox";
 
 const Option = Select.Option;
 
 class DetailForm extends BaseComponent {
   constructor(props) {
     super(props);
-    this.service = new ProductManagementService();
+    this.service = new CategoryManagementService();
   }
 
   componentWillMount() {
@@ -52,10 +53,16 @@ class DetailForm extends BaseComponent {
     let data = this.state.data;
     let errors = {};
     let formIsValid = true;
-    if (!data["name"]) {
+    if (!data["nameCategory"]) {
       formIsValid = false;
-      errors["name"] = this.trans("common.message.notEmpty", {
+      errors["nameCategory"] = this.trans("common.message.notEmpty", {
         field: this.trans("category:name")
+      });
+    }
+    if (!data["idCategory"]) {
+      formIsValid = false;
+      errors["idCategory"] = this.trans("common.message.notEmpty", {
+        field: this.trans("category:categoryId")
       });
     }
     this.setState({errors: errors});
@@ -72,10 +79,10 @@ class DetailForm extends BaseComponent {
       }
       if (this.state.action === Constants.ACTION.INSERT) {
         console.log("data",this.state.data);
-        // this.service.insert(this.state.data, () => {
-        //   showMessageBox(this.trans("common.message.updateSuccess"));
-        //   this.props.options.onComplete();
-        // })
+        this.service.insert(this.state.data, () => {
+          showMessageBox(this.trans("common.message.insertSuccess"));
+          this.props.options.onComplete();
+        })
       }
     }
   };
@@ -110,20 +117,37 @@ class DetailForm extends BaseComponent {
             <form className="form-group" noValidate autoComplete="off" id={"mainForm"}>
               <div className="row">
                 <div className="col-md-6" style={{marginTop: 10}}>
-                  <Label>{this.trans("category:name")} <span style={{color: 'red'}}> *</span></Label>
+                  <Label>{this.trans("category:categoryId")} <span style={{color: 'red'}}> *</span></Label>
                   <Input
-                    id="name"
+                    id="idCategory"
                     maxLength={1000}
                     disabled={this.state.disabledAll}
-                    name="name"
+                    name="idCategory"
                     allowClear
-                    addonAfter={<i className="fa fa-list-alt fa-fw" style={this.state.errors["price"] ? {color: 'red'} : null}/>}
-                    placeholder={this.trans("category:placeholder.insertName")}
-                    onChange={this.onChangeTextFieldCustom.bind(this, "name")}
-                    defaultValue={this.state.data.name}
+                    addonAfter={<i className="fa fa-list-alt fa-fw" style={this.state.errors["idCategory"] ? {color: 'red'} : null}/>}
+                    placeholder={this.trans("category:placeholder.insertCategoryId")}
+                    onChange={this.onChangeTextFieldCustom.bind(this, "idCategory")}
+                    defaultValue={this.state.data.idCategory}
                   />
                   <span className="errorMessage">
-                    {this.state.errors["name"]}
+                    {this.state.errors["idCategory"]}
+                  </span>
+                </div>
+                <div className="col-md-6" style={{marginTop: 10}}>
+                  <Label>{this.trans("category:name")} <span style={{color: 'red'}}> *</span></Label>
+                  <Input
+                    id="nameCategory"
+                    maxLength={1000}
+                    disabled={this.state.disabledAll}
+                    name="nameCategory"
+                    allowClear
+                    addonAfter={<i className="fa fa-list-alt fa-fw" style={this.state.errors["nameCategory"] ? {color: 'red'} : null}/>}
+                    placeholder={this.trans("category:placeholder.insertName")}
+                    onChange={this.onChangeTextFieldCustom.bind(this, "nameCategory")}
+                    defaultValue={this.state.data.nameCategory}
+                  />
+                  <span className="errorMessage">
+                    {this.state.errors["nameCategory"]}
                   </span>
                 </div>
               </div>

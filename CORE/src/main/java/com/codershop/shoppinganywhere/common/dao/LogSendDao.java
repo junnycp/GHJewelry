@@ -1,0 +1,1 @@
+package com.codershop.shoppinganywhere.common.dao;import com.codershop.shoppinganywhere.common.entity.LogSend;import com.codershop.shoppinganywhere.common.generics.GenericDao;/** * com.fis.fw.core.dao.LogSendDao * TungHuynh * Created by sondt18@fpt.com.vn * Date 24/06/2019 9:47 AM */public interface LogSendDao extends GenericDao<LogSend,Integer> {}

@@ -7,6 +7,10 @@ export default class UsersManagementService extends BaseService {
     return RestAPIHelper.get(Constants.API_URL + "user/getAll", data)
   };
 
+  search = (data) => {
+    return RestAPIHelper.post(Constants.API_URL + "user/find-by-example", data)
+  };
+
   insert = (data, _callback) => {
     RestAPIHelper.post(Constants.API_URL + "user/insert", data, _callback);
   };
