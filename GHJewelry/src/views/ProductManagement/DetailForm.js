@@ -247,11 +247,30 @@ class DetailForm extends BaseComponent {
                   </span>
                 </div>
                 <div className="col-md-6" style={{marginTop: 5}}>
+                  <Label>{this.trans("product:status")}: <span style={{color: 'red'}}> *</span></Label>
+                  <Select id="status"
+                          disabled={this.state.disabledAll || this.state.action === Constants.ACTION.INSERT}
+                          maxLength={500}
+                          name="status"
+                          placeholder={this.trans("product:placeholder.status")}
+                          onChange={this.onChangeSelect("status")}
+                          defaultValue={this.state.data.status}
+                  >
+                    <Option key={0} value={0}>{this.trans("common.outOfStock")}</Option>
+                    <Option key={1} value={1}>{this.trans("common.available")}</Option>
+
+                  </Select>
+                  <span className="errorMessage">
+                    {this.state.errors["size"]}
+                  </span>
+                </div>
+                <div className="col-md-6" style={{marginTop: 5}}>
                   <Label>{this.trans("product:note")}: <span style={{color: 'red'}}> *</span></Label>
                   <TextArea id="note"
                             disabled={this.state.disabledAll}
                             maxLength={500}
                             name="note"
+                            rows={1}
                             placeholder={this.trans("product:placeholder.note")}
                             allowClear
                             onChange={this.onChangeTextField.bind(this, "note")}
@@ -261,7 +280,7 @@ class DetailForm extends BaseComponent {
                     {this.state.errors["note"]}
                   </span>
                 </div>
-                <div className="col-md-6" style={{marginTop: 5}}>
+                <div className="col-md-12" style={{marginTop: 5}}>
                   <Label>{this.trans("product:picture")}: <span style={{color: 'red'}}> *</span></Label>
                   <div className="clearfix">
                     <Upload

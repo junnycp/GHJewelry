@@ -1,0 +1,1 @@
+package com.codershop.shoppinganywhere.common.service;import com.codershop.shoppinganywhere.common.entity.LogAction;import com.codershop.shoppinganywhere.common.generics.GenericService;public interface LogActionService extends GenericService<LogAction,Integer> {}

@@ -28,8 +28,9 @@ import {
   NavItem,
   NavLink,
   Nav,
-  Container
+  Container, DropdownToggle, DropdownMenu, DropdownItem, UncontrolledDropdown
 } from "reactstrap";
+import Badge from "reactstrap/es/Badge";
 
 function IndexNavbar() {
   const [navbarColor, setNavbarColor] = React.useState("navbar-transparent");
@@ -69,9 +70,9 @@ function IndexNavbar() {
             data-placement="bottom"
             href="/index"
             target="_blank"
-            title="Coded by Creative Tim"
+            title="GH Jewelry"
           >
-            GH Jewels
+            <i className="fa fa-diamond fa-lg" />{" "}GH Jewelry
           </NavbarBrand>
           <button
             aria-expanded={navbarCollapse}
@@ -94,64 +95,201 @@ function IndexNavbar() {
             <NavItem>
               <NavLink
                 data-placement="bottom"
-                href="https://twitter.com/CreativeTim?ref=creativetim"
-                target="_blank"
-                title="Follow us on Twitter"
-              >
-                <i className="fa fa-twitter" />
-                <p className="d-lg-none">Twitter</p>
-              </NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink
-                data-placement="bottom"
                 href="https://www.facebook.com/CreativeTim?ref=creativetim"
                 target="_blank"
                 title="Like us on Facebook"
               >
                 <i className="fa fa-facebook-square" />
-                <p className="d-lg-none">Facebook</p>
+                <span>Facebook</span>
               </NavLink>
             </NavItem>
             <NavItem>
               <NavLink
-                data-placement="bottom"
-                href="https://www.instagram.com/CreativeTimOfficial?ref=creativetim"
-                target="_blank"
-                title="Follow us on Instagram"
+                  data-placement="bottom"
+                  href="https://www.instagram.com/CreativeTimOfficial?ref=creativetim"
+                  target="_blank"
+                  title="Follow us on Instagram"
               >
                 <i className="fa fa-instagram" />
-                <p className="d-lg-none">Instagram</p>
+                <span>Instagram</span>
               </NavLink>
             </NavItem>
+            <UncontrolledDropdown nav inNavbar>
+              <DropdownToggle
+                  aria-expanded={false}
+                  aria-haspopup={true}
+                  caret
+                  color="default"
+                  data-toggle="dropdown"
+                  href="#pablo"
+                  id="dropdownMenuButton"
+                  nav
+                  onClick={e => e.preventDefault()}
+                  role="button"
+              >
+                <i className="fa fa-mars"/>{" "}MEN
+              </DropdownToggle>
+              <DropdownMenu
+                  aria-labelledby="dropdownMenuButton"
+                  className="dropdown-info"
+              >
+                <DropdownItem header tag="span">
+                  SẢN PHẨM CHO NAM
+                </DropdownItem>
+                <DropdownItem
+                    href="#pablo"
+                    onClick={e => e.preventDefault()}
+                >
+                  Nhẫn Chrome
+                </DropdownItem>
+                <DropdownItem
+                    href="#pablo"
+                    onClick={e => e.preventDefault()}
+                >
+                  Dây chuyền
+                </DropdownItem>
+                <DropdownItem
+                    href="#pablo"
+                    onClick={e => e.preventDefault()}
+                >
+                  Khuyên tai
+                </DropdownItem>
+                <DropdownItem divider />
+                <DropdownItem header tag="span">
+                  VÒNG TAY
+                </DropdownItem>
+                <DropdownItem
+                    href="#pablo"
+                    onClick={e => e.preventDefault()}
+                >
+                  Vòng tay chuỗi hạt
+                </DropdownItem>
+                <DropdownItem
+                    href="#pablo"
+                    onClick={e => e.preventDefault()}
+                >
+                  Vòng tay dây da
+                </DropdownItem>
+              </DropdownMenu>
+            </UncontrolledDropdown>
+            <UncontrolledDropdown nav inNavbar>
+              <DropdownToggle
+                  aria-expanded={false}
+                  aria-haspopup={true}
+                  caret
+                  color="default"
+                  data-toggle="dropdown"
+                  href="#pablo"
+                  id="dropdownMenuButton"
+                  nav
+                  onClick={e => e.preventDefault()}
+                  role="button"
+              >
+                <i className="fa fa-venus"/>{" "}WOMEN
+              </DropdownToggle>
+              <DropdownMenu
+                  aria-labelledby="dropdownMenuButton"
+                  className="dropdown-info"
+              >
+                <DropdownItem header tag="span">
+                  SẢN PHẨM CHO NỮ
+                </DropdownItem>
+                <DropdownItem
+                    href="#pablo"
+                    onClick={e => e.preventDefault()}
+                >
+                  Nhẫn Chrome
+                </DropdownItem>
+                <DropdownItem
+                    href="#pablo"
+                    onClick={e => e.preventDefault()}
+                >
+                  Dây chuyền
+                </DropdownItem>
+                <DropdownItem
+                    href="#pablo"
+                    onClick={e => e.preventDefault()}
+                >
+                  Khuyên tai
+                </DropdownItem>
+                <DropdownItem divider />
+                <DropdownItem header tag="span">
+                  VÒNG TAY
+                </DropdownItem>
+                <DropdownItem
+                    href="#pablo"
+                    onClick={e => e.preventDefault()}
+                >
+                  Vòng tay chuỗi hạt
+                </DropdownItem>
+                <DropdownItem
+                    href="#pablo"
+                    onClick={e => e.preventDefault()}
+                >
+                  Vòng tay dây da
+                </DropdownItem>
+              </DropdownMenu>
+            </UncontrolledDropdown>
             <NavItem>
               <NavLink
-                data-placement="bottom"
-                href="https://www.github.com/CreativeTimOfficial/paper-kit-react?ref=creativetim"
-                target="_blank"
-                title="Star on GitHub"
-              >
-                <i className="fa fa-github" />
-                <p className="d-lg-none">GitHub</p>
-              </NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink
-                href="https://demos.creative-tim.com/paper-kit-react/#/documentation?ref=pkr-index-navbar"
+                href="#user"
                 target="_blank"
               >
-                <i className="nc-icon nc-book-bookmark" /> Documentation
+                <i className="fa fa-user-o" /> Quản lý thông tin
               </NavLink>
             </NavItem>
+            <UncontrolledDropdown nav inNavbar>
+              <DropdownToggle
+                  aria-expanded={false}
+                  aria-haspopup={true}
+                  caret
+                  color="default"
+                  data-toggle="dropdown"
+                  href="#pablo"
+                  nav
+                  onClick={e => e.preventDefault()}
+                  role="button"
+              >
+                <i
+                    aria-hidden={true}
+                    className="nc-icon nc-settings-gear-65"
+                />
+              </DropdownToggle>
+              <DropdownMenu className="dropdown-danger" right>
+                <DropdownItem header tag="span">
+                  Dropdown header
+                </DropdownItem>
+                <DropdownItem
+                    href="#pablo"
+                    onClick={e => e.preventDefault()}
+                >
+                  Another action
+                </DropdownItem>
+                <DropdownItem
+                    href="#pablo"
+                    onClick={e => e.preventDefault()}
+                >
+                  Something else here
+                </DropdownItem>
+                <DropdownItem divider />
+                <DropdownItem
+                    href="#pablo"
+                    onClick={e => e.preventDefault()}
+                >
+                  Separated link
+                </DropdownItem>
+              </DropdownMenu>
+            </UncontrolledDropdown>
             <NavItem>
               <Button
                 className="btn-round"
                 color="danger"
-                href="#pablo"
+                href="#cart"
                 target="_blank"
-                disabled
               >
-                Upgrade to Pro
+                <i className="fa fa-shopping-cart"/>
+                {" "}Giỏ hàng{" "}
+                <Badge color="default">0</Badge>
               </Button>
             </NavItem>
           </Nav>

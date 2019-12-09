@@ -1,5 +1,5 @@
 import React from 'react';
-import {Select, Input, Button} from "antd";
+import {Select, Input, Button, DatePicker} from "antd";
 import BaseComponent from "../../components/BaseComponent";
 import {withTranslation} from "react-i18next";
 import DisplayBox from "../../components/DisplayBox";
@@ -12,6 +12,7 @@ import Constants from "../../configs/Constants";
 import DetailForm from "../UsersManagement/DetailForm";
 import UsersManagementService from "../../services/UsersManagementService";
 import openNotification from "../../components/Notification";
+import moment from "moment";
 
 const Option = Select.Option;
 
@@ -68,7 +69,10 @@ class UsersManagement extends BaseComponent {
   };
 
   onFetchUsers = async () => {
-    let result = await this.service.fetchUsers();
+    let result = await this.service.fetchUsers([{
+      direction: 'asc',
+      property: 'userName'
+    }]);
     if (result) {
       this.setState({
         lstUser: result.data
@@ -114,18 +118,23 @@ class UsersManagement extends BaseComponent {
       {title: this.trans("users:email"), dataIndex: 'email', key: 'email'},
       {title: this.trans("users:phone"), dataIndex: 'phone', key: 'phone'},
       {title: this.trans("users:address"), dataIndex: 'address', key: 'address'},
+      {title: this.trans("common.createdDate"), dataIndex: 'createTime', key: 'createTime', render: this.formatDate},
     ];
   };
 
   onSearch = async () => {
+    // let data = this.state.data;
+    // await data.createTime ? data.createTime = moment(this.state.data.createTime).format("DD-MM-YYYY") : data.createTime = null;
+    console.log("data search",this.state.data);
     let result = await this.service.search(this.state.data);
-    if (result.data.length === 0) {
+    if (result.data.length === 0 || !result.data) {
       showMessageBox("Không tìm thấy kết quả!")
+    }else {
+      this.setState({
+        lstUser: result.data
+      });
+      openNotification('success', this.trans("common.message.found"), this.trans("users:message.found", {result: this.state.lstUser.length}));
     }
-    this.setState({
-      lstUser: result.data
-    });
-    openNotification('success', this.trans("common.message.found"), this.trans("users:message.found", {result: this.state.lstUser.length}));
   };
 
   onChangeSelectCustom = name => value => {
@@ -148,6 +157,14 @@ class UsersManagement extends BaseComponent {
         [name]: value === "" ? null : value
       }
     }))
+  };
+
+  formatDate = (cell, row) => {
+    for (let data of this.state.lstUser) {
+      if (cell === data.createTime) {
+        return moment(data.createTime).format("DD/MM/YYYY")
+      }
+    }
   };
 
   render() {
@@ -211,6 +228,16 @@ class UsersManagement extends BaseComponent {
                      placeholder={this.trans("users:placeholder.address")}
                      onChange={this.onChangeTextFieldCustom.bind(this, "address")}
               />
+            </div>
+            <div className="col-md-4" style={{marginTop: 10}}>
+              <Label>{this.trans("common.createdDate")}</Label>
+              <DatePicker
+                id="createTime"
+                style={{width: '100%'}}
+                name="createTime"
+                placeholder={this.trans("common.createdDate")}
+                onChange={this.onChangeDate.bind(this, "createTime")}
+                format={'DD/MM/YYYY'}/>
             </div>
             <div className="col-md-12" style={{textAlign: "right", marginTop: 10}}>
               <Button type="primary" onClick={this.onSearch}><i

@@ -1,11 +1,13 @@
 {
-  "title": "Quản lý hóa đơn",
+  "title": "Danh sách hóa đơn",
+  "detail": "Chi tiết hóa đơn",
   "orderId": "Mã hóa đơn",
   "userId": "Mã khách hàng",
   "productId": "Mã sản phẩm",
   "quantity": "Số lượng",
   "totalMoney": "Tổng tiền",
   "createdDate": "Ngày tạo",
+  "status": "Trạng thái",
   "placeholder": {
     "orderId": "Nhập mã hóa đơn",
     "userId": "Nhập mã khách hàng",

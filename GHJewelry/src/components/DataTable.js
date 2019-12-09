@@ -3,8 +3,6 @@ import {Table, Button} from 'antd';
 import BaseComponent from "./BaseComponent";
 import {withTranslation} from "react-i18next";
 import Constants from "../configs/Constants";
-import {showMessageBox} from "./MessageBox";
-
 
 class DataTable extends BaseComponent {
 
@@ -26,13 +24,14 @@ class DataTable extends BaseComponent {
         <Table {...this.props.options} columns={this.props.options.columns.filter((item) => (
           item.key !== 'description'
         ))}
+               pagination={this.props.showPagination === true ?
+                 {
+                   showTotal: (total) => (`Tổng số ${total} bản ghi`),
+                   showSizeChanger: true,
+                   pageSizeOptions: ['3', '10', '20', '30', '40']
+                 } : false}
                bordered
-               pagination={{
-                 showTotal: (total) => (`Tổng số ${total} bản ghi`),
-                 // onChange: this.cancel,
-                 showSizeChanger: true,
-                 pageSizeOptions: ['3', '10', '20', '30', '40']
-               }}
+               onRowClick={this.props.options.onRowSelect}
         />
       </div>
     )

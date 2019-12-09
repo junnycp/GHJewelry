@@ -1,0 +1,1 @@
+package com.codershop.shoppinganywhere.common.dao;import com.codershop.shoppinganywhere.common.entity.ApiPartner;import com.codershop.shoppinganywhere.common.generics.GenericDao;public interface ApiPartnerDao extends GenericDao<ApiPartner,Integer> {    ApiPartner getByCode(String code);}

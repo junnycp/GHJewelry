@@ -4,10 +4,10 @@ export default {
       name: 'Dashboard',
       url: '/dashboard',
       icon: 'icon-speedometer',
-      badge: {
-        variant: 'info',
-        text: 'PRO',
-      },
+      // badge: {
+      //   variant: 'info',
+      //   text: 'PRO',
+      // },
     },
     {
       title: true,
@@ -22,10 +22,10 @@ export default {
       name: 'Product',
       url: '/productManagement',
       icon: 'fa fa-suitcase',
-      badge: {
-        variant: 'warning',
-        text: 'IN PROGRESS',
-      },
+      // badge: {
+      //   variant: 'warning',
+      //   text: 'IN PROGRESS',
+      // },
     },
     {
       title: true,
@@ -40,10 +40,10 @@ export default {
       name: 'Users',
       url: '/users/usersManagement',
       icon: 'fa fa-users',
-      badge: {
-        variant: 'success',
-        text: 'READY FOR TEST',
-      }
+      // badge: {
+      //   variant: 'success',
+      //   text: 'READY FOR TEST',
+      // }
       },
     {
       title: true,
@@ -58,10 +58,10 @@ export default {
       name: 'Category',
       url: '/category',
       icon: 'fa fa-list-alt',
-      badge: {
-        variant: 'success',
-        text: 'READY FOR TEST',
-      }
+      // badge: {
+      //   variant: 'success',
+      //   text: 'READY FOR TEST',
+      // }
     },
     {
       title: true,
@@ -94,38 +94,38 @@ export default {
       name: 'Shipper',
       url: '/shippers',
       icon: 'fa fa-truck',
-      badge: {
-        variant: 'success',
+      // badge: {
+      //   variant: 'success',
         // text: 'READY FOR TEST',
-      }
+      // }
     },
-    {
-      title: true,
-      name: 'Settings and Configs',
-      wrapper: {            // optional wrapper object
-        element: '',        // required valid HTML5 element tag
-        attributes: {}        // optional valid JS object with JS API naming ex: { className: "my-class", style: { fontFamily: "Verdana" }, id: "my-id"}
-      },
-      class: ''             // optional class names space delimited list for title item ex: "text-center"
-    },
-    {
-      name: 'Settings',
-      url: '/settings',
-      icon: 'fa fa-gear',
-      badge: {
-        variant: 'success',
-        // text: 'READY FOR TEST',
-      }
-    },
-    {
-      name: 'Configs',
-      url: '/settings',
-      icon: 'fa fa-wrench',
-      badge: {
-        variant: 'success',
-        // text: 'READY FOR TEST',
-      }
-    },
+    // {
+    //   title: true,
+    //   name: 'Settings and Configs',
+    //   wrapper: {            // optional wrapper object
+    //     element: '',        // required valid HTML5 element tag
+    //     attributes: {}        // optional valid JS object with JS API naming ex: { className: "my-class", style: { fontFamily: "Verdana" }, id: "my-id"}
+    //   },
+    //   class: ''             // optional class names space delimited list for title item ex: "text-center"
+    // },
+    // {
+    //   name: 'Settings',
+    //   url: '/settings',
+    //   icon: 'fa fa-gear',
+    //   badge: {
+    //     variant: 'success',
+    //     // text: 'READY FOR TEST',
+    //   }
+    // },
+    // {
+    //   name: 'Configs',
+    //   url: '/settings',
+    //   icon: 'fa fa-wrench',
+    //   badge: {
+    //     variant: 'success',
+    //     // text: 'READY FOR TEST',
+    //   }
+    // },
       // {
       //   title: true,
       //   name: 'Theme',
@@ -272,41 +272,41 @@ export default {
       //   url: '/charts',
       //   icon: 'icon-pie-chart',
       // },
-      {
-        name: 'Icons',
-        url: '/icons',
-        icon: 'icon-star',
-        children: [
-          {
-            name: 'CoreUI Icons',
-            url: '/icons/coreui-icons',
-            icon: 'icon-star',
-            badge: {
-              variant: 'info',
-              text: 'NEW',
-            },
-          },
-          {
-            name: 'Flags',
-            url: '/icons/flags',
-            icon: 'icon-star',
-          },
-          {
-            name: 'Font Awesome',
-            url: '/icons/font-awesome',
-            icon: 'icon-star',
-            badge: {
-              variant: 'secondary',
-              text: '4.7',
-            },
-          },
-          {
-            name: 'Simple Line Icons',
-            url: '/icons/simple-line-icons',
-            icon: 'icon-star',
-          },
-        ],
-      },
+      // {
+      //   name: 'Icons',
+      //   url: '/icons',
+      //   icon: 'icon-star',
+      //   children: [
+      //     {
+      //       name: 'CoreUI Icons',
+      //       url: '/icons/coreui-icons',
+      //       icon: 'icon-star',
+      //       badge: {
+      //         variant: 'info',
+      //         text: 'NEW',
+      //       },
+      //     },
+      //     {
+      //       name: 'Flags',
+      //       url: '/icons/flags',
+      //       icon: 'icon-star',
+      //     },
+      //     {
+      //       name: 'Font Awesome',
+      //       url: '/icons/font-awesome',
+      //       icon: 'icon-star',
+      //       badge: {
+      //         variant: 'secondary',
+      //         text: '4.7',
+      //       },
+      //     },
+      //     {
+      //       name: 'Simple Line Icons',
+      //       url: '/icons/simple-line-icons',
+      //       icon: 'icon-star',
+      //     },
+      //   ],
+      // },
       // {
       //   name: 'Notifications',
       //   url: '/notifications',

@@ -1,0 +1,13 @@
+{
+  "title": "Quản lý danh mục",
+  "name": "Tên danh mục",
+  "categoryId": "Mã danh mục",
+  "placeholder": {
+    "insertName": "Nhập tên danh mục",
+    "selectName": "Chọn danh mục",
+    "insertCategoryId": "Nhập mã danh mục"
+  },
+  "message":{
+    "found": "Đã tìm thấy {{result}} danh mục"
+  }
+}

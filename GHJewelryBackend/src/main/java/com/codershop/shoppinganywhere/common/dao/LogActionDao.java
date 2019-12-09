@@ -1,0 +1,1 @@
+package com.codershop.shoppinganywhere.common.dao;import com.codershop.shoppinganywhere.common.entity.LogAction;import com.codershop.shoppinganywhere.common.generics.GenericDao;public interface LogActionDao extends GenericDao<LogAction,Integer> {}

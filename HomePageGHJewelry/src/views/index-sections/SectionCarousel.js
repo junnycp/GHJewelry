@@ -34,20 +34,15 @@ import {
 
 const items = [
   {
-    src: require("assets/img/soroush-karimi.jpg"),
-    altText: "Somewhere",
-    caption: "Somewhere"
-  },
-  {
-    src: require("assets/img/federico-beccari.jpg"),
-    altText: "Somewhere else",
-    caption: "Somewhere else"
-  },
-  {
-    src: require("assets/img/joshua-stannard.jpg"),
+    src: require("assets/img/crs4.jpg"),
     altText: "Here it is",
     caption: "Here it is"
-  }
+  },
+  {
+    src: require("assets/img/crs3.jpg"),
+    altText: "Here it is",
+    caption: "Here it is"
+  },
 ];
 
 function SectionCarousel() {
@@ -78,7 +73,7 @@ function SectionCarousel() {
       <div className="section pt-o" id="carousel">
         <Container>
           <Row>
-            <Col className="ml-auto mr-auto" md="8">
+            <Col className="ml-auto mr-auto" md="12">
               <Card className="page-carousel">
                 <Carousel
                   activeIndex={activeIndex}

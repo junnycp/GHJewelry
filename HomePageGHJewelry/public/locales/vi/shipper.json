@@ -1,0 +1,20 @@
+{
+  "title": "Quản lý nhân viên vận chuyển",
+  "idShipper": "Mã nhân viên",
+  "idCard": "Số CMND",
+  "name": "Tên nhân viên",
+  "email": "Email",
+  "phone": "Số điện thoại",
+  "address": "Địa chỉ",
+  "placeholder": {
+    "idShipper": "Nhập mã nhân viên",
+    "idCard": "Nhập số CMND",
+    "name": "Nhập tên nhân viên",
+    "email": "Nhập email",
+    "phone": "Nhập số điện thoại",
+    "address": "Nhập địa chỉ"
+  },
+  "message": {
+    "found": "Đã tìm thấy {{result}} nhân viên vận chuyển"
+  }
+}

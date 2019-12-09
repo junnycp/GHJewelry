@@ -4,7 +4,7 @@ import Constants from "../configs/Constants";
 
 export default class OrderManagementService extends BaseService {
   fetchOrders = (data) => {
-    return RestAPIHelper.get(Constants.API_URL + "order/getAll", data)
+    return RestAPIHelper.post(Constants.API_URL + "Orders/get-all", data)
   };
 
   insert = (data, _callback) => {

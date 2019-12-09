@@ -1,0 +1,25 @@
+{
+  "title": "Quản lý sản phẩm",
+  "code": "Mã sản phẩm",
+  "name": "Tên sản phẩm",
+  "type": "Loại sản phẩm",
+  "price": "Giá",
+  "size": "Kích cỡ",
+  "status": "Trạng thái",
+  "createdDate": "Ngày tạo",
+  "note": "Ghi chú",
+  "picture": "Ảnh",
+  "placeholder": {
+    "code": "Nhập mã sản phẩm",
+    "name": "Nhập tên sản phẩm",
+    "status": "Chọn trạng thái",
+    "price": "Từ",
+    "insertPrice": "Nhập giá",
+    "size": "Chọn kích cỡ",
+    "createdDate": "Chọn ngày tạo",
+    "note": "Nhập ghi chú"
+  },
+  "message": {
+    "found": "Đã tìm thấy {{result}} sản phẩm!"
+  }
+}

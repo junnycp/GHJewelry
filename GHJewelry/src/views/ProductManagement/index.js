@@ -33,7 +33,10 @@ class ProductManagement extends BaseComponent {
   };
 
   onFetchCategory = async () => {
-    let result = await this.service.fetchCategory();
+    let result = await this.service.fetchCategory([{
+      direction: 'asc',
+      property: 'nameCategory'
+    }]);
     if (result) {
       this.setState({
         lstCategory: result.data
@@ -83,7 +86,11 @@ class ProductManagement extends BaseComponent {
   };
 
   onFetchProduct = async () => {
-    let result = await this.service.fetchProduct();
+    let result = await this.service.fetchProduct([{
+        direction: 'asc',
+        property: 'nameProduct'
+      }]
+    );
     if (result) {
       this.setState({
         lstProduct: result.data
@@ -101,7 +108,7 @@ class ProductManagement extends BaseComponent {
         onClickView={() => this.onOpenView(row)}
         onClickDelete={() =>
           showConfirm(this.trans("common.message.confirmDelete"), () => {
-            showMessageBox(this.trans("common.message.deleteSuccess"));
+            this.onDelete();
           })
         }
         onClickEdit={() => this.onOpenUpdate(row)}
@@ -116,14 +123,20 @@ class ProductManagement extends BaseComponent {
 
   genCols = () => {
     return [
-      {title: 'STT', key: 'stt', render: (text, record, index) => index + 1},
-      {title: this.trans("common.action"), key: 'action', render: this.genActionCol},
+      {title: 'STT', key: 'stt', render: (text, record, index) => index + 1, align: 'center'},
+      {title: this.trans("common.action"), key: 'action', render: this.genActionCol, align: 'center'},
       {title: this.trans("product:code"), dataIndex: 'idProduct', key: 'idProduct'},
       {title: this.trans("category:name"), dataIndex: 'idCategory', key: 'idCategory', render: this.genCategoryName},
       {title: this.trans("product:name"), dataIndex: 'nameProduct', key: 'nameProduct'},
-      {title: this.trans("product:size"), dataIndex: 'size', key: 'size'},
+      {title: this.trans("product:size"), dataIndex: 'size', key: 'size', align: 'center'},
       {title: this.trans("product:price"), dataIndex: 'price', key: 'price'},
-      {title: this.trans("product:status"), dataIndex: 'status', key: 'status', render: this.genStatusCol},
+      {
+        title: this.trans("product:status"),
+        dataIndex: 'status',
+        key: 'status',
+        render: this.genStatusCol,
+        align: 'center'
+      },
     ];
   };
 
@@ -135,9 +148,20 @@ class ProductManagement extends BaseComponent {
     }
   };
 
-  onSearch = () => {
-    console.log(this.state.data);
-    openNotification('success', this.trans("common.message.found"), this.trans("product:message.found", {result: this.state.lstProduct.length}));
+  onSearch = async () => {
+    let result = await this.service.search(this.state.data);
+    if(result){
+      this.setState({
+        lstProduct: result.data
+      });
+      openNotification('success', this.trans("common.message.found"), this.trans("product:message.found", {result: this.state.lstProduct.length}));
+    }
+  };
+
+  onDelete = async row => {
+    await this.service.delete(row.idProduct);
+    showMessageBox(this.trans("common.message.deleteSuccess"));
+    this.onFetchProduct();
   };
 
   onChangeSelectCustom = name => value => {
@@ -169,23 +193,23 @@ class ProductManagement extends BaseComponent {
           <div className="row">
             <div className="col-md-4">
               <Label>{this.trans("product:name")}:</Label>
-              <Input id="name"
+              <Input id="nameProduct"
                      maxLength={20}
-                     name="name"
+                     name="nameProduct"
                      allowClear
                      addonAfter={<i className="fa fa-cubes fa-fw"/>}
                      placeholder={this.trans("product:placeholder.name")}
-                     onChange={this.onChangeTextFieldCustom.bind(this, "name")}
+                     onChange={this.onChangeTextFieldCustom.bind(this, "nameProduct")}
               />
             </div>
             <div className="col-md-4">
               <Label>{this.trans("category:name")}:</Label>
-              <Select id="category"
+              <Select id="idCategory"
                       maxLength={30}
-                      name="category"
+                      name="idCategory"
                       allowClear
                       placeholder={this.trans("category:placeholder.selectName")}
-                      onChange={this.onChangeSelectCustom("category")}
+                      onChange={this.onChangeSelectCustom("idCategory")}
               >
                 {this.state.lstCategory.map((category) => (
                   <Option key={category.idCategory}
@@ -224,12 +248,12 @@ class ProductManagement extends BaseComponent {
                       name="size"
                       allowClear
                       placeholder={this.trans("product:placeholder.size")}
-                      onChange={this.onChangeTextFieldCustom.bind(this, 'size')}
+                      onChange={this.onChangeSelectCustom( 'size')}
               >
-                <Option key={0} value={0}>S</Option>
-                <Option key={1} value={1}>M</Option>
-                <Option key={2} value={2}>L</Option>
-                <Option key={3} value={3}>XL</Option>
+                <Option key={0} value={'S'}>S</Option>
+                <Option key={1} value={'M'}>M</Option>
+                <Option key={2} value={'L'}>L</Option>
+                <Option key={3} value={'XL'}>XL</Option>
               </Select>
             </div>
             <div className="col-md-4" style={{marginTop: 10}}>

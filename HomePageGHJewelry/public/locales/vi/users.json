@@ -1,0 +1,24 @@
+{
+  "title": "Quản lý người dùng",
+  "userId": "Mã người dùng",
+  "username": "Tên người dùng",
+  "password": "Mật khẩu",
+  "role": "Chức vụ",
+  "status": "Trạng thái",
+  "email": "Email",
+  "phone": "Số điện thoại",
+  "address": "Địa chỉ",
+  "placeholder": {
+    "userId": "Nhập mã người dùng",
+    "username": "Nhập tên người dùng",
+    "password": "Nhập mật khẩu",
+    "role": "Chọn chức vụ",
+    "status": "Chọn Trạng thái",
+    "email": "Nhập Email",
+    "phone": "Nhập Số điện thoại",
+    "address": "Nhập Địa chỉ"
+  },
+  "message": {
+    "found": "Đã tìm thấy {{result}} người dùng!"
+  }
+}

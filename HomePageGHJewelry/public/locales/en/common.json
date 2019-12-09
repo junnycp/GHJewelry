@@ -1,0 +1,126 @@
+{
+  "language": "vie",
+  "common": {
+    "num": "No.",
+    "select": "-- Choose --",
+    "viewDetail": "View detail",
+    "action": "Action",
+    "search": "Search",
+    "advanceSearch": "Advance Search",
+    "yes": "Yes",
+    "no": "No",
+    "yesC": "Yes",
+    "confirm": "Confirm",
+    "cancel": "Cancel",
+    "upLoadFile": "Choose file",
+    "resetSearch": "Reset Search",
+    "approve": "Approve",
+    "reject": "Reject",
+    "maxSizeUpLoad": "FileSize is no larger than 5mb",
+    "close": "Close",
+    "back":"Go back",
+    "choose": "Choose",
+    "addNew": "Add new",
+    "update": "Update",
+    "save": "Save",
+    "assignTicket": "Assign Ticket",
+    "nodata": "No data to display",
+    "export": "Export File",
+    "active": "ACTIVE",
+    "inactive": "INACTIVE",
+    "available": "AVAILABLE",
+    "outOfStock": "INAVAILABLE",
+    "message": {
+      "title": "Notification",
+      "confirmDelete": "Are you sure you want to delete this item?",
+      "confirmCancelDialog": "Are you sure you want cancel editing?",
+      "confirmSavePer": "Are you sure you want to add permission for this group user?",
+      "notEmpty": "{{field}} must not be empty!",
+      "insertSuccess": "Insert Success",
+      "updateSuccess": "Update Success",
+      "resetSuccess": "Reset Password Success. Password new: {{pass}}",
+      "confirmReset": "Are you sure you want to reset the password for this user?",
+      "chooseUser": "Please choose the User first!",
+      "deleteSuccess": "Delete Success!",
+      "parent": "Cannot be its own parent!",
+      "saveSuccess": "Save data success",
+      "maxInputLength": "{{field}} not allowed to be larger than {{num}} characters",
+      "chooseRoom": "Please choose room before adding equipment",
+      "invalidEmail": "Wrong Email!",
+      "invalidPhone": "Invalid Phone number!",
+      "comparisonDate": "The end date must be greater than the start date!",
+      "comparisonTime": "The end time must be greater than the start time!",
+      "fromDate": "The start date must be greater than the now time!",
+      "found": "Search success"
+    },
+    "error": {
+      "LOGIN_FAIL": "Username or Password is incorrect",
+      "TOKEN_ERR": "The session is invalid or has expired. You need to login again to continue.",
+      "SERVER_ERR": "An error occurred while connecting to the server",
+      "PROCESS_ERR": "An error occurred while processing",
+      "DUPLICATE_KEY": "Code is already exists",
+      "DUPLICATE_EMAIL": "Email is already exists",
+      "DUPLICATE_CHARGE_PRICE": "Charge price is exists in system. Please check date and time ",
+      "DUPLICATE_USERNAME": "Username already exists",
+      "DUPLICATE_USERNAME_ACTIVE": "Username already active",
+      "DATA_ALREADY": "Can't delete, data is in use"
+    },
+    "tooltip": {
+      "button-view": "View detail",
+      "button-update": "Update",
+      "button-delete": "Delete",
+      "uploadImage": "Click to upload image",
+      "reset": "Reset Password",
+      "searchRoom": "Search Room",
+      "searchEquipment": "Search Equipment"
+    }
+  },
+  "login": {
+    "title": "Login",
+    "textmuted": "Sign In to your account",
+    "username": "Username",
+    "password": "Password",
+    "forgotpassword": "Forgot Password?",
+    "language": "Tiếng Việt",
+    "btnlogin": "Login",
+    "btncontact": "Contact",
+    "bigtitle": "GH Jewels",
+    "message": {
+      "usernameEmpty": "You must enter Username",
+      "passEmpty": "You must enter Password"
+    }
+  },
+  "Home": {
+    "title": "Home"
+  },
+  "Dashboard": {
+    "title": "Dashboard"
+  },
+  "Products": {
+    "title": "Product Management"
+  },
+  "Category": {
+    "title": "Category"
+  },
+  "AppParam": {
+    "title": "App param config"
+  },
+  "Sample": {
+    "title": "Sample"
+  },
+  "ReasonFeedback": {
+    "title": "Feedback"
+  },
+  "CustomerIdentify": {
+    "title": "Customer Identify"
+  },
+  "BeaconsManagement": {
+    "title": "Beacons Management"
+  },
+  "BeaconsNotification": {
+    "title": "Beacons Notification"
+  },
+  "CustomerNotification": {
+    "title": "Customer Notification"
+  }
+}

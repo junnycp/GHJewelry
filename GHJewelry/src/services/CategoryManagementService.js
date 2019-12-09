@@ -4,20 +4,24 @@ import Constants from "../configs/Constants";
 
 export default class ProductManagementService extends BaseService {
   fetchCategory = (data) => {
-    return RestAPIHelper.get(Constants.API_URL + "category/getAll", data);
+    return RestAPIHelper.post(Constants.API_URL + "Categories/get-all", data);
+  };
+
+  search = (data) => {
+    return RestAPIHelper.post(Constants.API_URL + "Categories/find-by-example", data)
   };
 
   insert = (data, _callback) => {
-    RestAPIHelper.post(Constants.API_URL + "category/insert", data, _callback);
+    RestAPIHelper.post(Constants.API_URL + "Categories/create", data, _callback);
   };
 
-  // update = (data, _callback) => {
-  //   RestAPIHelper.post(Constants.API_URL + "product/update", data, _callback);
-  // };
-  //
-  // delete = (id) => {
-  //   const url = Constants.API_URL + "product/delete?idProduct=" + id;
-  //   return RestAPIHelper.get(url);
-  // };
+  update = (data, _callback) => {
+    RestAPIHelper.post(Constants.API_URL + "Categories/update", data, _callback);
+  };
+
+  delete = (id) => {
+    const url = Constants.API_URL + "Categories/delete/" + id;
+    return RestAPIHelper.get(url);
+  };
 
 }

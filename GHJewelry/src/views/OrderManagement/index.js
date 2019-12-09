@@ -13,6 +13,7 @@ import DetailForm from "../UsersManagement/DetailForm";
 import openNotification from "../../components/Notification";
 import OrderManagementService from "../../services/OrderManagementService";
 import BrandLogo from "../../assets/img/GHJewelry.png";
+import StatusFormatter from "../../components/StatusFormatter";
 
 const Option = Select.Option;
 const {Meta} = Card;
@@ -23,6 +24,7 @@ class OrderManagement extends BaseComponent {
     this.service = new OrderManagementService();
     this.state = {
       lstOrder: [],
+      lstDetail: [],
       data: {}
     }
   }
@@ -70,7 +72,7 @@ class OrderManagement extends BaseComponent {
   };
 
   onFetchOrders = async () => {
-    let result = await this.service.fetchOrders();
+    let result = await this.service.fetchOrders([]);
     if (result) {
       this.setState({
         lstOrder: result.data
@@ -102,20 +104,28 @@ class OrderManagement extends BaseComponent {
     );
   };
 
-  // genStatusCol = (cell, row) => {
-  //   return <StatusFormatter value={row.status === 1 ? 'ACTIVE' : 'INACTIVE'}
-  //                           label={row.status === 1 ? this.trans("common.active") : this.trans("common.inactive")}/>
-  // };
+  genStatusCol = (cell, row) => {
+    return <StatusFormatter value={row.status === 1 ? 'ACTIVE' : 'INACTIVE'}
+                            label={row.status === 1 ? this.trans("common.delivered") : this.trans("common.undelivered")}/>
+  };
 
   genCols = () => {
     return [
       {title: this.trans("common.num"), key: 'stt', render: (text, record, index) => index + 1},
-      {title: this.trans("common.action"), key: 'action', render: this.genActionCol},
-      {title: this.trans("users:username"), dataIndex: 'userName', key: 'userName'},
-      {title: this.trans("users:password"), dataIndex: 'password', key: 'password'},
-      {title: this.trans("users:email"), dataIndex: 'email', key: 'email'},
-      {title: this.trans("users:phone"), dataIndex: 'phone', key: 'phone'},
-      {title: this.trans("users:address"), dataIndex: 'address', key: 'address'},
+      {title: this.trans("orders:orderId"), dataIndex: 'idOrder', key: 'idOrder'},
+      {title: this.trans("orders:userId"), dataIndex: 'idUser', key: 'idUser'},
+      {title: this.trans("orders:createdDate"), dataIndex: 'createTime', key: 'createTime'},
+      {title: this.trans("orders:totalMoney"), dataIndex: 'totalMoney', key: 'totalMoney'},
+      {title: this.trans("orders:status"), dataIndex: 'status', key: 'status', render: this.genStatusCol},
+    ];
+  };
+
+  genDetailCols = () => {
+    return [
+      {title: this.trans("common.num"), key: 'stt', render: (text, record, index) => index + 1},
+      {title: this.trans("product:name"), dataIndex: 'orderItem.idProduct', key: 'orderItem.idProduct'},
+      {title: this.trans("orders:quantity"), dataIndex: 'orderItem.quantity', key: 'orderItem.quantity'},
+      {title: this.trans("orders:totalMoney"), dataIndex: 'orderItem.totalMoney', key: 'orderItem.totalMoney'},
     ];
   };
 
@@ -146,10 +156,20 @@ class OrderManagement extends BaseComponent {
     }))
   };
 
+  onRowSelect = async (record) => {
+    console.log("record",record);
+    await this.setState({
+      data: record,
+      lstDetail: record.orderDetails,
+      isChoosen: true
+    })
+  };
+
   render() {
+    console.log("kakak",this.state.lstDetail);
     return (
       <div className="animated fadeIn">
-        <DisplayBox title={<strong>{this.trans("common.search")}</strong>} expanded={true}>
+        <DisplayBox title={<strong>{this.trans("common.search")}</strong>} expanded={false}>
           <div className="row">
             <div className="col-md-4">
               <Label>{this.trans("orders:orderId")}:</Label>
@@ -212,16 +232,35 @@ class OrderManagement extends BaseComponent {
             </div>
           </div>
         </DisplayBox>
-        <DisplayBox title={<strong>{this.trans("orders:title")}</strong>} expanded={true}>
-          <DataTable
-            showTopButton={false}
-            options={{
-              columns: this.genCols(),
-              dataSource: this.state.lstOrder.length === 0 ? null : this.state.lstOrder,
-              loading: this.state.lstOrder.length === 0
-            }}
-            onInsert={this.onOpenInsert}/>
-        </DisplayBox>
+        <div className="row">
+          <div className="col-md-5">
+            <DisplayBox title={<strong>{this.trans("orders:title")}</strong>} expanded={true}>
+              <DataTable
+                showTopButton={false}
+                showPagination={true}
+                options={{
+                  onRowSelect: this.onRowSelect,
+                  columns: this.genCols(),
+                  dataSource: this.state.lstOrder.length === 0 ? null : this.state.lstOrder,
+                  loading: this.state.lstOrder.length === 0,
+                  rowKey: record => record.idOrder
+                }}
+                onInsert={this.onOpenInsert}/>
+            </DisplayBox>
+          </div>
+          <div className="col-md-7">
+            <DisplayBox title={<strong>{this.trans("orders:detail")}</strong>} expanded={true}>
+              <DataTable
+                showTopButton={false}
+                showPagination={false}
+                options={{
+                  columns: this.genDetailCols(),
+                  dataSource: this.state.lstDetail.length === 0 ? null : this.state.lstDetail,
+                }}
+                onInsert={this.onOpenInsert}/>
+            </DisplayBox>
+          </div>
+        </div>
       </div>
     );
   }

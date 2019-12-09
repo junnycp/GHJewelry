@@ -1,0 +1,135 @@
+{
+  "language": "eng",
+  "common": {
+    "num": "STT",
+    "select": "-- Lựa chọn --",
+    "viewDetail": "Xem chi tiết",
+    "action": "Hành động",
+    "search": "Tìm kiếm",
+    "advanceSearch": "Tìm kiếm nâng cao",
+    "searchInfo": "Thông tin tìm kiếm",
+    "yes": "Đồng ý",
+    "no": "Không",
+    "yesC": "Có",
+    "upLoadFile": "Chọn hình ảnh",
+    "confirm": "Xác nhận",
+    "cancel": "Hủy",
+    "approve": "Phê duyệt",
+    "resetSearch": "Xóa Tìm Kiếm",
+    "reject": "Từ chối",
+    "close": "Đóng",
+    "back": "Quay lại",
+    "maxSizeUpLoad": "File tải lên không được quá 5 Mb",
+    "choose": "Chọn",
+    "addNew": "Thêm mới",
+    "update": "Cập nhật",
+    "save": "Lưu thông tin",
+    "assignTicket": "Gán ticket",
+    "nodata": "Không có dữ liệu",
+    "export": "Xuất File",
+    "active": "HOẠT ĐỘNG",
+    "inactive": "KHÔNG HOẠT ĐỘNG",
+    "available": "CÒN HÀNG",
+    "outOfStock": "HẾT HÀNG",
+    "message": {
+      "title": "Thông Báo",
+      "confirmDelete": "Bạn có chắc chắn muốn xóa không?",
+      "confirmCancelDialog": "Bạn có muốn hủy bỏ thay đổi không?",
+      "confirmSavePer": "Bạn có chắc chắn muốn cấp quyền cho nhóm người dùng này không?",
+      "notEmpty": "{{field}} không được trống",
+      "insertSuccess": "Thêm mới thành công",
+      "updateSuccess": "Cập nhật thành công",
+      "resetSuccess": "Đặt lại mật khẩu thành công. Mật khẩu mới: {{pass}}",
+      "confirmReset": "Bạn có chắc muốn đặt lại mật khẩu cho người dùng này không ?",
+      "deleteSuccess": "Xóa thành công",
+      "saveSuccess": "Lưu thông tin thành công",
+      "maxInputLength": "{{field}} không được phép lớn hơn {{num}} ký tự",
+      "chooseRoom": "Vui lòng chọn phòng trước",
+      "chooseUser": "Vui lòng chọn tài khoản trước",
+      "isNumber": "{{field}} phải là số",
+      "parent": "Không thể là cha của chính nó",
+      "invalidEmail": "Sai định dạng email.",
+      "invalidPhone": "Sai định dạng số điện thoại.",
+      "comparisonDate": "Ngày kết thúc phải lớn hơn ngày bắt đầu",
+      "comparisonTime": "Giờ kết thúc phải lớn hơn giờ bắt đầu",
+      "fromDate": "Ngày bắt đầu không được nhỏ hơn ngày hiện tại",
+      "requiredField": "Bạn phải nhập giá trị cho trường {{field}}",
+      "compareGreateThan": "{{field1}} phải lớn hơn {{field2}}",
+      "compareLessThan": "{{field1}} phải nhỏ hơn {{field2}}",
+      "found": "Tìm kiếm thành công"
+    },
+    "error": {
+      "LOGIN_FAIL": "Tên đăng nhập hoặc Mật khẩu không đúng",
+      "TOKEN_ERR": "Phiên làm việc không hợp lệ hoặc đã hết hiệu lực. Bạn cần đăng nhập lại để tiếp tục.",
+      "SERVER_ERR": "Có lỗi xảy ra khi kết nối tới máy chủ",
+      "PROCESS_ERR": "Có lỗi xảy ra khi xử lý",
+      "DUPLICATE_KEY": "Mã đã tồn tại trên hệ thống",
+      "DUPLICATE_EMAIL": "Email đã tồn tại trên hệ thống",
+      "DUPLICATE_USERNAME": "Tên đăng nhập đã tồn tại trên hệ thống",
+      "DUPLICATE_USERNAME_ACTIVE": "Tên đăng nhập này đang hoạt động",
+      "DUPLICATE_CHARGE_PRICE": "Giá cước đã tồn tại trên hệ thống. Vui lòng kiểm tra lại ngày và thời gian",
+      "EXISTS_OTP": "Phòng họp đang tồn tại OTP còn hiệu lực. Không thể lấy OTP mới!!!",
+      "DATA_ALREADY": "Không thể xóa, Dữ liệu đang được sử dụng"
+    },
+    "tooltip": {
+      "button-view": "Xem chi tiết",
+      "button-update": "Chỉnh sửa thông tin",
+      "button-delete": "Xóa",
+      "uploadImage": "Nhấn vào để upload ảnh",
+      "reset": "Đặt lại mật khẩu",
+      "searchRoom": "Tìm phòng",
+      "searchEquipment": "Tìm thiết bị"
+    }
+  },
+  "login": {
+    "title": "Đăng Nhập",
+    "textmuted": "Đăng nhập tài khoản của bạn",
+    "username": "Tài khoản",
+    "password": "Mật khẩu",
+    "forgotpassword": "Quên mật khẩu?",
+    "language": "English",
+    "btnlogin": "Đăng Nhập",
+    "btncontact": "Liên Hệ",
+    "bigtitle": "GH Jewels",
+    "message": {
+      "usernameEmpty": "Bạn chưa nhập Tài khoản",
+      "passEmpty": "Bạn chưa nhập Mật khẩu"
+    }
+  },
+  "Home": {
+    "title": "Trang chủ"
+  },
+  "Dashboard": {
+    "title": "Biểu đồ"
+  },
+  "Products": {
+    "title": "Quản lý sản phẩm"
+  },
+  "Category": {
+    "title": "Danh mục"
+  },
+  "AppParam": {
+    "title": "Cấu hình tham số"
+  },
+  "Sample": {
+    "title": "Sample"
+  },
+  "ReasonFeedback": {
+    "title": "Lý do đánh giá"
+  },
+  "CustomerIdentify": {
+    "title": "Nhận diện khách hàng"
+  },
+  "BeaconsManagement": {
+    "title": "Quản lý Beacons"
+  },
+  "BeaconsNotification": {
+    "title": "Thông báo của Beacons"
+  },
+  "CustomerNotification": {
+    "title": "Nhóm KH gửi thông báo"
+  },
+  "ProductManagement": {
+    "title": "Quản lý sản phẩm"
+  }
+}

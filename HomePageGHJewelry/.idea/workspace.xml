@@ -1,7 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2811cbc9-3157-41d7-8ab4-723aca64cd4b" name="Default Changelist" comment="" />
+    <list default="true" id="2811cbc9-3157-41d7-8ab4-723aca64cd4b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../GHJewelryBackend/src/main/java/com/codershop/shoppinganywhere/controller/DetailOrderController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../GHJewelryBackend/src/main/java/com/codershop/shoppinganywhere/dao/repo/DetailOrderRepo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../GHJewelryBackend/src/main/java/com/codershop/shoppinganywhere/dao/repo/OrderRepo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../GHJewelryBackend/src/main/java/com/codershop/shoppinganywhere/dao/repo/ext/DetailOrderRepoExt.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../GHJewelryBackend/src/main/java/com/codershop/shoppinganywhere/dao/repo/ext/OrderRepoExt.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../GHJewelryBackend/src/main/java/com/codershop/shoppinganywhere/dao/repo/ext/impl/DetailOrderRepoExtImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../GHJewelryBackend/src/main/java/com/codershop/shoppinganywhere/dao/repo/ext/impl/OrderRepoExtImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../GHJewelryBackend/src/main/java/com/codershop/shoppinganywhere/service/DetailOrderService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../GHJewelryBackend/src/main/java/com/codershop/shoppinganywhere/service/Impl/DetailOrderServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../GHJewelryBackend/src/main/java/com/codershop/shoppinganywhere/service/Impl/OrderServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../GHJewelryBackend/src/main/java/com/codershop/shoppinganywhere/service/OrderService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/configs/Constants.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GHJewelry/.idea/dataSources/15a3f2c6-0788-496b-9f27-907153e1779d.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../GHJewelry/.idea/dataSources/15a3f2c6-0788-496b-9f27-907153e1779d.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GHJewelry/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../GHJewelry/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GHJewelry/public/locales/en/appParam.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GHJewelry/public/locales/en/beacons.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GHJewelry/public/locales/en/common.json" beforeDir="false" afterPath="$PROJECT_DIR$/../GHJewelry/public/locales/en/common.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GHJewelry/public/locales/vi/appParam.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GHJewelry/public/locales/vi/beacons.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GHJewelry/public/locales/vi/common.json" beforeDir="false" afterPath="$PROJECT_DIR$/../GHJewelry/public/locales/vi/common.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GHJewelry/src/_nav.js" beforeDir="false" afterPath="$PROJECT_DIR$/../GHJewelry/src/_nav.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GHJewelry/src/assets/img/brand/mbf-logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GHJewelry/src/common/RestAPIHelper.js" beforeDir="false" afterPath="$PROJECT_DIR$/../GHJewelry/src/common/RestAPIHelper.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GHJewelry/src/components/MessageBox.js" beforeDir="false" afterPath="$PROJECT_DIR$/../GHJewelry/src/components/MessageBox.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GHJewelry/src/services/CategoryManagementService.js" beforeDir="false" afterPath="$PROJECT_DIR$/../GHJewelry/src/services/CategoryManagementService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GHJewelry/src/services/ProductManagementService.js" beforeDir="false" afterPath="$PROJECT_DIR$/../GHJewelry/src/services/ProductManagementService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GHJewelry/src/services/UsersManagementService.js" beforeDir="false" afterPath="$PROJECT_DIR$/../GHJewelry/src/services/UsersManagementService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GHJewelry/src/views/CategoryManagement/DetailForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/../GHJewelry/src/views/CategoryManagement/DetailForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GHJewelry/src/views/CategoryManagement/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../GHJewelry/src/views/CategoryManagement/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GHJewelry/src/views/ProductManagement/DetailForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/../GHJewelry/src/views/ProductManagement/DetailForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GHJewelry/src/views/ProductManagement/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../GHJewelry/src/views/ProductManagement/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GHJewelry/src/views/ShipperManagement/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../GHJewelry/src/views/ShipperManagement/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GHJewelry/src/views/UsersManagement/DetailForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/../GHJewelry/src/views/UsersManagement/DetailForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GHJewelry/src/views/UsersManagement/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../GHJewelry/src/views/UsersManagement/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/scss/paper-kit.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/scss/paper-kit.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Footers/DemoFooter.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Footers/DemoFooter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Headers/IndexHeader.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Headers/IndexHeader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Navbars/IndexNavbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navbars/IndexNavbar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/index-sections/SectionCarousel.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/index-sections/SectionCarousel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/index-sections/SectionDark.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/index-sections/SectionDark.js" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -9,16 +55,64 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="DefaultGradleProjectSettings">
-    <option name="testRunner" value="GRADLE" />
-    <option name="delegatedBuild" value="true" />
+    <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/Headers/IndexHeader.js">
+        <entry file="file://$PROJECT_DIR$/src/views/ListProduct.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1224">
-              <caret line="68" column="31" selection-start-line="68" selection-start-column="31" selection-end-line="68" selection-end-column="31" />
+            <state relative-caret-position="4584">
+              <caret line="205" column="68" selection-start-line="205" selection-start-column="68" selection-end-line="205" selection-end-column="68" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/common/RestAPIHelper.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="4416">
+              <caret line="193" column="9" selection-start-line="193" selection-start-column="9" selection-end-line="193" selection-end-column="9" />
+              <folding>
+                <element signature="e#0#37#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/MessageBox.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="480">
+              <caret line="23" column="19" selection-start-line="23" selection-start-column="19" selection-end-line="23" selection-end-column="19" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/views/Index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="288">
+              <caret line="45" column="25" selection-start-line="45" selection-start-column="25" selection-end-line="45" selection-end-column="25" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+                <element signature="e#672#732#0" expanded="true" />
+                <element signature="e#872#940#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/views/index-sections/SectionLogin.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -27,19 +121,25 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/Navbars/IndexNavbar.js">
+        <entry file="file://$PROJECT_DIR$/src/views/index-sections/SectionDark.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="80">
-              <caret line="69" column="25" selection-start-line="69" selection-start-column="25" selection-end-line="69" selection-end-column="25" />
+            <state relative-caret-position="288">
+              <caret line="36" column="32" selection-start-line="36" selection-start-column="32" selection-end-line="36" selection-end-column="32" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.idea/paper-kit-react-master.iml">
+        <entry file="file://$PROJECT_DIR$/src/services/ProductManagementService.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
-              <caret line="8" column="9" selection-start-line="8" selection-start-column="9" selection-end-line="8" selection-end-column="9" />
+            <state relative-caret-position="216">
+              <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+              <folding>
+                <element signature="e#0#39#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -50,27 +150,68 @@
     <findStrings>
       <find>Paper Kit</find>
       <find>localhost</find>
+      <find>GH Jewel</find>
+      <find>Paper Kit React by</find>
+      <find>navigation are</find>
+      <find>&lt;h3&gt;</find>
+      <find>drop</find>
+      <find>&lt;h3&gt;Ca</find>
+      <find>somewhere</find>
+      <find>SectionCa</find>
+      <find>ICON</find>
+      <find>labels</find>
+      <find>pagination</find>
+      <find>Add To</find>
+      <find>showProgressFooter</find>
+      <find>TOKEN</find>
+      <find>checkLogged</find>
     </findStrings>
     <dirStrings>
       <dir>D:\TECHNOLOGIES\Project 2\paper-kit-react-master\src</dir>
       <dir>D:\TECHNOLOGIES\Project 2\paper-kit-react-master</dir>
+      <dir>D:\TECHNOLOGIES\Project2_GHJewelry\HomePageGHJewelry\src\views</dir>
+      <dir>D:\TECHNOLOGIES\Project2_GHJewelry\HomePageGHJewelry</dir>
+      <dir>D:\TECHNOLOGIES\Project2_GHJewelry\HomePageGHJewelry\src</dir>
     </dirStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/views/index-sections/SectionButtons.js" />
+        <option value="$PROJECT_DIR$/public/index.html" />
+        <option value="$PROJECT_DIR$/src/views/index-sections/SectionNavbars.js" />
         <option value="$PROJECT_DIR$/src/components/Headers/IndexHeader.js" />
         <option value="$PROJECT_DIR$/src/components/Navbars/IndexNavbar.js" />
+        <option value="$PROJECT_DIR$/src/assets/scss/paper-kit.scss" />
+        <option value="$PROJECT_DIR$/src/views/index-sections/SectionCarousel.js" />
+        <option value="$PROJECT_DIR$/src/views/index-sections/SectionDownload.js" />
+        <option value="$PROJECT_DIR$/src/views/PopularProduct.js" />
+        <option value="$PROJECT_DIR$/src/containers/DefaultLayout/DefaultHeader.js" />
+        <option value="$PROJECT_DIR$/src/containers/DefaultLayout/DefaultLayout.js" />
+        <option value="$PROJECT_DIR$/src/views/FetchProduct.js" />
+        <option value="$PROJECT_DIR$/src/views/Index.js" />
+        <option value="$PROJECT_DIR$/src/components/Pagination.js" />
+        <option value="$PROJECT_DIR$/src/components/BaseComponent.js" />
+        <option value="$PROJECT_DIR$/src/configs/routes.js" />
+        <option value="$PROJECT_DIR$/src/components/Footers/DemoFooter.js" />
+        <option value="$PROJECT_DIR$/src/views/ListProduct.js" />
+        <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/src/components/MessageBox.js" />
+        <option value="$PROJECT_DIR$/src/common/RestAPIHelper.js" />
+        <option value="$PROJECT_DIR$/src/views/index-sections/SectionDark.js" />
+        <option value="$PROJECT_DIR$/src/services/ProductManagementService.js" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-110" />
-    <option name="y" value="25" />
-    <option name="width" value="1940" />
-    <option name="height" value="1050" />
+    <option name="x" value="-10" />
+    <option name="width" value="695" />
+    <option name="height" value="745" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -82,13 +223,70 @@
         <subPane>
           <expand>
             <path>
-              <item name="paper-kit-react-master" type="b2602c69:ProjectViewProjectNode" />
-              <item name="paper-kit-react-master" type="462c0819:PsiDirectoryNode" />
+              <item name="HomePageGHJewelry" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HomePageGHJewelry" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="paper-kit-react-master" type="b2602c69:ProjectViewProjectNode" />
-              <item name="paper-kit-react-master" type="462c0819:PsiDirectoryNode" />
-              <item name=".idea" type="462c0819:PsiDirectoryNode" />
+              <item name="HomePageGHJewelry" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HomePageGHJewelry" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HomePageGHJewelry" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HomePageGHJewelry" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="common" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HomePageGHJewelry" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HomePageGHJewelry" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HomePageGHJewelry" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HomePageGHJewelry" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="Footers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HomePageGHJewelry" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HomePageGHJewelry" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="configs" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HomePageGHJewelry" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HomePageGHJewelry" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="containers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HomePageGHJewelry" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HomePageGHJewelry" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="containers" type="462c0819:PsiDirectoryNode" />
+              <item name="DefaultLayout" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HomePageGHJewelry" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HomePageGHJewelry" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="services" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HomePageGHJewelry" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HomePageGHJewelry" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HomePageGHJewelry" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HomePageGHJewelry" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="index-sections" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -97,13 +295,23 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../GHJewelry" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="ts.external.directory.path" value="D:\TECHNOLOGIES\Project 2\paper-kit-react-master\node_modules\typescript\lib" />
+    <property name="ts.external.directory.path" value="D:\TECHNOLOGIES\Project2_GHJewelry\HomePageGHJewelry\node_modules\typescript\lib" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\TECHNOLOGIES\Project2_GHJewelry\HomePageGHJewelry\public\locales\vi" />
+      <recent name="D:\TECHNOLOGIES\Project2_GHJewelry\HomePageGHJewelry\public\locales\en" />
+      <recent name="D:\TECHNOLOGIES\Project2_GHJewelry\HomePageGHJewelry\src\configs" />
+      <recent name="D:\TECHNOLOGIES\Project2_GHJewelry\HomePageGHJewelry\src\common" />
+      <recent name="D:\TECHNOLOGIES\Project2_GHJewelry\HomePageGHJewelry\src" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -129,16 +337,24 @@
       <updated>1572584346917</updated>
       <workItem from="1572584348292" duration="3916000" />
       <workItem from="1574079736930" duration="983000" />
+      <workItem from="1574626663526" duration="1892000" />
+      <workItem from="1574648065261" duration="697000" />
+      <workItem from="1574698279754" duration="1000" />
+      <workItem from="1575057039213" duration="838000" />
+      <workItem from="1575082875017" duration="16798000" />
+      <workItem from="1575101591403" duration="10032000" />
+      <workItem from="1575393049952" duration="3772000" />
+      <workItem from="1575720152778" duration="854000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4899000" />
+    <option name="totallyTimeSpent" value="39783000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17292225" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19101876" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -146,7 +362,7 @@
       <window_info id="Capture Tool" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32956153" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32956153" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39886847" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -155,7 +371,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32956153" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.417256" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.40876946" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="bottom" id="TypeScript" order="12" weight="0.32956153" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -173,23 +389,7 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/views/NucleoIcons.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-6864">
-          <caret line="28" column="5" lean-forward="true" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/react-scripts/lib/react-app.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="31" column="15" selection-start-line="31" selection-start-column="15" selection-end-line="31" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/react-scripts/lib/react-app.d.ts" />
     <entry file="file://$PROJECT_DIR$/src/components/Headers/ProfilePageHeader.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1054">
@@ -209,40 +409,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/views/index-sections/SectionButtons.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1656">
-          <caret line="80" column="25" selection-start-line="80" selection-start-column="25" selection-end-line="80" selection-end-column="25" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="264">
           <caret line="40" column="31" selection-start-line="40" selection-start-column="31" selection-end-line="40" selection-end-column="31" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/views/Index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="538">
-          <caret line="54" column="28" selection-start-line="54" selection-start-column="28" selection-end-line="54" selection-end-column="28" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Headers/IndexHeader.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1224">
-          <caret line="68" column="31" selection-start-line="68" selection-start-column="31" selection-end-line="68" selection-end-column="31" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
@@ -264,17 +434,358 @@
     <entry file="file://$PROJECT_DIR$/jsconfig.json">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Navbars/IndexNavbar.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="69" column="25" selection-start-line="69" selection-start-column="25" selection-end-line="69" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.idea/paper-kit-react-master.iml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="192">
           <caret line="8" column="9" selection-start-line="8" selection-start-column="9" selection-end-line="8" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="227">
+          <caret line="56" column="42" selection-start-line="56" selection-start-column="42" selection-end-line="56" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/NucleoIcons.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2640">
+          <caret line="28" column="5" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/index-sections/SectionNavigation.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1357">
+          <caret line="39" column="16" selection-start-line="39" selection-start-column="16" selection-end-line="39" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/index-sections/SectionNavbars.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="497">
+          <caret line="213" column="43" selection-start-line="172" selection-start-column="20" selection-end-line="213" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/reactstrap/src/Container.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-37">
+          <caret line="16" column="6" selection-start-line="16" selection-start-column="6" selection-end-line="16" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assets/css/bootstrap.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="227">
+          <caret line="5" column="135612" selection-start-line="5" selection-start-column="135612" selection-end-line="5" selection-end-column="135612" />
+          <folding>
+            <element signature="e#25768#26002#2" expanded="true" />
+            <element signature="e#26806#26959#1" expanded="true" />
+            <element signature="e#26999#27233#1" expanded="true" />
+            <element signature="e#30239#30515#2" expanded="true" />
+            <element signature="e#31347#31500#1" expanded="true" />
+            <element signature="e#31540#31816#1" expanded="true" />
+            <element signature="e#61072#61259#2" expanded="true" />
+            <element signature="e#61488#61624#2" expanded="true" />
+            <element signature="e#62027#62160#2" expanded="true" />
+            <element signature="e#63642#63795#1" expanded="true" />
+            <element signature="e#75788#76018#2" expanded="true" />
+            <element signature="e#76885#77121#2" expanded="true" />
+            <element signature="e#106714#106891#2" expanded="true" />
+            <element signature="e#106937#107114#2" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assets/scss/react/react-differences.scss">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assets/scss/paper-kit.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="419">
+          <caret line="61" column="31" lean-forward="true" selection-start-line="61" selection-start-column="31" selection-end-line="61" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/index-sections/SectionDownload.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="31" column="12" selection-start-line="31" selection-start-column="12" selection-end-line="31" selection-end-column="12" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/reactstrap/src/CardSubtitle.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="227">
+          <caret line="15" column="6" selection-start-line="15" selection-start-column="6" selection-end-line="15" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/index-sections/SectionCarousel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="202">
+          <caret line="39" column="4" selection-start-line="39" selection-start-column="4" selection-end-line="39" selection-end-column="4" />
+          <folding>
+            <element signature="e#652#784#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/reactstrap/src/Card.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="83">
+          <caret line="24" column="6" selection-start-line="24" selection-start-column="6" selection-end-line="24" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Headers/IndexHeader.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="42" column="73" selection-start-line="42" selection-start-column="16" selection-end-line="42" selection-end-column="73" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Navbars/IndexNavbar.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1128">
+          <caret line="74" column="54" selection-start-line="74" selection-start-column="12" selection-end-line="74" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/index-sections/SectionButtons.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1896">
+          <caret line="107" column="14" selection-start-line="107" selection-start-column="14" selection-end-line="107" selection-end-column="14" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/index-sections/SectionProgress.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4416">
+          <caret line="214" column="29" selection-start-line="156" selection-start-column="16" selection-end-line="214" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/index-sections/SectionJavaScript.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="672">
+          <caret line="59" column="14" selection-start-line="59" selection-start-column="14" selection-end-line="59" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/containers/DefaultLayout/DefaultFooter.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="15" column="28" lean-forward="true" selection-start-line="15" selection-start-column="28" selection-end-line="15" selection-end-column="28" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/ProgressCustom.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/PopularProduct.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="129">
+          <caret line="80" column="45" selection-start-line="80" selection-start-column="45" selection-end-line="80" selection-end-column="45" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/configs/Constants.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="10" column="24" lean-forward="true" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.env">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="24">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/i18n/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="17" column="21" lean-forward="true" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#27#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/services/BaseService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/common/StorageUtil.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="5" column="20" lean-forward="true" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/containers/DefaultLayout/DefaultHeader.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="24">
+          <caret line="1" column="50" selection-start-line="1" selection-start-column="50" selection-end-line="1" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/containers/DefaultLayout/DefaultLayout.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="31" column="2" lean-forward="true" selection-start-line="31" selection-start-column="2" selection-end-line="31" selection-end-column="2" />
+          <folding>
+            <element signature="e#0#49#0" expanded="true" />
+            <element signature="e#509#551#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/locales/vi/orders.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="17" column="1" lean-forward="true" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/locales/en/common.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/locales/vi/category.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="12" column="23" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/BaseComponent.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="6" selection-start-column="6" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/configs/routes.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Pagination.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Footers/DemoFooter.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="11" column="22" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/ListProduct.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4584">
+          <caret line="205" column="68" selection-start-line="205" selection-start-column="68" selection-end-line="205" selection-end-column="68" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/common/RestAPIHelper.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4416">
+          <caret line="193" column="9" selection-start-line="193" selection-start-column="9" selection-end-line="193" selection-end-column="9" />
+          <folding>
+            <element signature="e#0#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/MessageBox.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="23" column="19" selection-start-line="23" selection-start-column="19" selection-end-line="23" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/Index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="45" column="25" selection-start-line="45" selection-start-column="25" selection-end-line="45" selection-end-column="25" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#672#732#0" expanded="true" />
+            <element signature="e#872#940#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/index-sections/SectionLogin.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/index-sections/SectionDark.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="36" column="32" selection-start-line="36" selection-start-column="32" selection-end-line="36" selection-end-column="32" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/services/ProductManagementService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -30,6 +30,10 @@
     "inactive": "INACTIVE",
     "available": "AVAILABLE",
     "outOfStock": "INAVAILABLE",
+    "delivered": "DELIVERED",
+    "undelivered": "UNDELIVERED",
+    "createdDate": "Created Date",
+    "updatedDate": "Updated Date",
     "message": {
       "title": "Notification",
       "confirmDelete": "Are you sure you want to delete this item?",

@@ -1,11 +1,13 @@
 {
-  "title": "Order Management",
+  "title": "Order List",
+  "detail": "Order Detail",
   "orderId": "Order ID",
   "userId": "User ID",
   "productId": "Product ID",
   "quantity": "Quantity",
   "totalMoney": "Total money",
   "createdDate": "Created Date",
+  "status": "Status",
   "placeholder": {
     "orderId": "Type in Order ID",
     "userId": "Type in User ID",

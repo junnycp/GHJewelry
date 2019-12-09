@@ -59,12 +59,6 @@ class DetailForm extends BaseComponent {
         field: this.trans("category:name")
       });
     }
-    if (!data["idCategory"]) {
-      formIsValid = false;
-      errors["idCategory"] = this.trans("common.message.notEmpty", {
-        field: this.trans("category:categoryId")
-      });
-    }
     this.setState({errors: errors});
     return formIsValid;
   }
@@ -72,13 +66,12 @@ class DetailForm extends BaseComponent {
   onSubmit = () => {
     if (this.validate()) {
       if (this.state.action === Constants.ACTION.UPDATE) {
-        // this.service.update(this.state.data, () => {
-        //   showMessageBox(this.trans("common.message.updateSuccess"));
-        //   this.props.options.onComplete();
-        // })
+        this.service.update(this.state.data, () => {
+          showMessageBox(this.trans("common.message.updateSuccess"));
+          this.props.options.onComplete();
+        })
       }
       if (this.state.action === Constants.ACTION.INSERT) {
-        console.log("data",this.state.data);
         this.service.insert(this.state.data, () => {
           showMessageBox(this.trans("common.message.insertSuccess"));
           this.props.options.onComplete();
@@ -116,24 +109,7 @@ class DetailForm extends BaseComponent {
           <div className="modal-body">
             <form className="form-group" noValidate autoComplete="off" id={"mainForm"}>
               <div className="row">
-                <div className="col-md-6" style={{marginTop: 10}}>
-                  <Label>{this.trans("category:categoryId")} <span style={{color: 'red'}}> *</span></Label>
-                  <Input
-                    id="idCategory"
-                    maxLength={1000}
-                    disabled={this.state.disabledAll}
-                    name="idCategory"
-                    allowClear
-                    addonAfter={<i className="fa fa-list-alt fa-fw" style={this.state.errors["idCategory"] ? {color: 'red'} : null}/>}
-                    placeholder={this.trans("category:placeholder.insertCategoryId")}
-                    onChange={this.onChangeTextFieldCustom.bind(this, "idCategory")}
-                    defaultValue={this.state.data.idCategory}
-                  />
-                  <span className="errorMessage">
-                    {this.state.errors["idCategory"]}
-                  </span>
-                </div>
-                <div className="col-md-6" style={{marginTop: 10}}>
+                <div className="col-md-12" style={{marginTop: 10}}>
                   <Label>{this.trans("category:name")} <span style={{color: 'red'}}> *</span></Label>
                   <Input
                     id="nameCategory"

@@ -4,23 +4,23 @@ import Constants from "../configs/Constants";
 
 export default class UsersManagementService extends BaseService {
   fetchUsers = (data) => {
-    return RestAPIHelper.get(Constants.API_URL + "user/getAll", data)
+    return RestAPIHelper.post(Constants.API_URL + "users/get-all", data)
   };
 
   search = (data) => {
-    return RestAPIHelper.post(Constants.API_URL + "user/find-by-example", data)
+    return RestAPIHelper.post(Constants.API_URL + "users/find-by-example", data)
   };
 
   insert = (data, _callback) => {
-    RestAPIHelper.post(Constants.API_URL + "user/insert", data, _callback);
+    RestAPIHelper.post(Constants.API_URL + "users/create", data, _callback);
   };
 
   update = (data, _callback) => {
-    RestAPIHelper.post(Constants.API_URL + "user/update", data, _callback);
+    RestAPIHelper.post(Constants.API_URL + "users/update", data, _callback);
   };
 
   delete = (id) => {
-    const url = Constants.API_URL + "user/delete?idUser=" + id;
+    const url = Constants.API_URL + "users/delete/" + id;
     return RestAPIHelper.get(url);
   };
 }

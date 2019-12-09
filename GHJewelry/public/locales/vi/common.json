@@ -31,6 +31,10 @@
     "inactive": "KHÔNG HOẠT ĐỘNG",
     "available": "CÒN HÀNG",
     "outOfStock": "HẾT HÀNG",
+    "delivered": "ĐÃ GIAO HÀNG",
+    "undelivered": "CHƯA GIAO HÀNG",
+    "createdDate": "Ngày tạo",
+    "updatedDate": "Ngày sửa",
     "message": {
       "title": "Thông Báo",
       "confirmDelete": "Bạn có chắc chắn muốn xóa không?",

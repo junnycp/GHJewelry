@@ -72,7 +72,10 @@ class UsersManagement extends BaseComponent {
   };
 
   onFetchCategory = async () => {
-    let result = await this.service.fetchCategory();
+    let result = await this.service.fetchCategory([{
+      direction: 'asc',
+      property: 'nameCategory'
+    }]);
     if (result) {
       this.setState({
         lstCategory: result.data
@@ -89,8 +92,8 @@ class UsersManagement extends BaseComponent {
         showEdit
         onClickView={() => this.onOpenView(row)}
         onClickDelete={() =>
-          showConfirm(this.trans("common.message.confirmDelete"), () => {
-            showMessageBox(this.trans("common.message.deleteSuccess"));
+          showConfirm(this.trans("common.message.confirmDelete"),  () => {
+            this.onDelete(row);
           })
         }
         onClickEdit={() => this.onOpenUpdate(row)}
@@ -107,14 +110,28 @@ class UsersManagement extends BaseComponent {
     return [
       {title: this.trans("common.num"), key: 'stt', render: (text, record, index) => index + 1},
       {title: this.trans("common.action"), key: 'action', render: this.genActionCol},
-      {title: this.trans("category:categoryId"), dataIndex: 'idCategory', key: 'idCategory'},
       {title: this.trans("category:name"), dataIndex: 'nameCategory', key: 'nameCategory'},
     ];
   };
 
-  onSearch = () => {
-    console.log(this.state.data);
-    openNotification('success', this.trans("common.message.found"), this.trans("category:message.found", {result: this.state.lstCategory.length}));
+  onSearch = async () => {
+    let result = await this.service.search(this.state.data);
+    if (result.data.length === 0) {
+      showMessageBox("Không tìm thấy kết quả!")
+    } else {
+      this.setState({
+        lstCategory: result.data
+      });
+      openNotification('success', this.trans("common.message.found"), this.trans("category:message.found", {result: this.state.lstCategory.length}));
+    }
+  };
+
+  onDelete = async row => {
+    console.log("row", row);
+    await this.service.delete(row.idCategory);
+    showMessageBox(this.trans("common.message.deleteSuccess"));
+    this.onFetchCategory();
+
   };
 
   onChangeSelectCustom = name => value => {
@@ -146,13 +163,13 @@ class UsersManagement extends BaseComponent {
           <div className="row">
             <div className="col-md-6" style={{marginBottom: 10}}>
               <Label>{this.trans("category:name")}</Label>
-              <Input id="name"
+              <Input id="nameCategory"
                      maxLength={20}
-                     name="name"
+                     name="nameCategory"
                      allowClear
                      addonAfter={<i className="fa fa-list-alt fa-fw"/>}
                      placeholder={this.trans("category:placeholder.insertName")}
-                     onChange={this.onChangeSelectCustom("name")}
+                     onChange={this.onChangeTextFieldCustom.bind(this, "nameCategory")}
               />
             </div>
             <div className="col-md-6">

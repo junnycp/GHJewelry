@@ -87,13 +87,15 @@ class ShipperManagement extends BaseComponent {
     this.setState({
       lstShipper: result.data
     });
-    openNotification('success', this.trans("common.message.found"), this.trans("shipper:message.found", {result: this.state.lstShipper.length}));
+    if (result.data.length !== 0) {
+      openNotification('success', this.trans("common.message.found"), this.trans("shipper:message.found", {result: this.state.lstShipper.length}));
+    }
   };
 
   onDelete = async row => {
-      await this.service.delete(row.idShipper);
-      showMessageBox(this.trans("common.message.deleteSuccess"));
-      this.onFetchShipper();
+    await this.service.delete(row.idShipper);
+    showMessageBox(this.trans("common.message.deleteSuccess"));
+    this.onFetchShipper();
   };
 
   genActionCol = (cell, row) => {
@@ -106,7 +108,7 @@ class ShipperManagement extends BaseComponent {
         onClickView={() => this.onOpenView(row)}
         onClickDelete={() =>
           showConfirm(this.trans("common.message.confirmDelete"), () => {
-              this.onDelete(row);
+            this.onDelete(row);
           })
         }
         onClickEdit={() => this.onOpenUpdate(row)}
@@ -125,10 +127,10 @@ class ShipperManagement extends BaseComponent {
       {title: this.trans("common.action"), key: 'action', render: this.genActionCol},
       {title: this.trans("shipper:idShipper"), dataIndex: 'idShipper', key: 'idShipper'},
       {title: this.trans("shipper:name"), dataIndex: 'name', key: 'name'},
-      {title: this.trans("shipper:idCard"), dataIndex: 'idCard', key: 'idCard', render: this.genCategoryName},
+      {title: this.trans("shipper:idCard"), dataIndex: 'idCard', key: 'idCard'},
       {title: this.trans("shipper:email"), dataIndex: 'email', key: 'email'},
       {title: this.trans("shipper:phone"), dataIndex: 'phone', key: 'phone'},
-      {title: this.trans("shipper:address"), dataIndex: 'address', key: 'address', render: this.genStatusCol},
+      {title: this.trans("shipper:address"), dataIndex: 'address', key: 'address'},
     ];
   };
 
@@ -235,7 +237,6 @@ class ShipperManagement extends BaseComponent {
           <DataTable options={{
             columns: this.genCols(),
             dataSource: this.state.lstShipper.length === 0 ? null : this.state.lstShipper,
-            loading: this.state.lstShipper.length === 0
           }}
                      onInsert={this.onOpenInsert}/>
         </DisplayBox>

@@ -38,7 +38,7 @@ function IndexHeader() {
         <div className="content-center">
           <Container>
             <div className="title-brand">
-              <h1 className="presentation-title">GH Jewels</h1>
+              <h1 className="presentation-title">GH Jewelry</h1>
               <div className="fog-low">
                 <img alt="..." src={require("assets/img/fog-low.png")} />
               </div>
@@ -47,7 +47,7 @@ function IndexHeader() {
               </div>
             </div>
             <h2 className="presentation-subtitle text-center">
-              Make your mark with a Free Bootstrap 4 (Reactstrap) UI Kit!
+              Cung cấp các sản phẩm trang sức chất liệu da, chuỗi hạt, mạ chrome, handmade...
             </h2>
           </Container>
         </div>
@@ -58,15 +58,15 @@ function IndexHeader() {
           }}
         />
         <h6 className="category category-absolute">
-          Designed and coded by{" "}
+          Designed and coded by Nam Giang
           <a
-            href="https://www.creative-tim.com?ref=pkr-index-page"
+            href="https://www.facebook.com/junnycp"
             target="_blank"
           >
             <img
               alt="..."
               className="creative-tim-logo"
-              src={require("assets/img/creative-tim-white-slim2.png")}
+              src={require("assets/img/GHJewelry.png")}
             />
           </a>
         </h6>
