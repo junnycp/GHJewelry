@@ -7,13 +7,15 @@ import {withTranslation} from 'react-i18next';
 import {AppAsideToggler, AppNavbarBrand, AppSidebarToggler} from '@coreui/react';
 import logo from '../../assets/img/brand/GHJewelry.svg'
 import sygnet from '../../assets/img/brand/sygnet.svg'
+import {LocalStorage} from "../../common/StorageUtil";
+import Text from "antd/es/typography/Text";
 
 const propTypes = {
   children: PropTypes.node,
 };
 
 const defaultProps = {};
-
+let userData = LocalStorage.getItem("MENU");
 class DefaultHeader extends Component {
   lang = 'vi';
 
@@ -50,7 +52,7 @@ class DefaultHeader extends Component {
         <Nav className="ml-auto" navbar>
           <NavItem className="d-md-down-none">
             <NavLink to="#" className="nav-link"><i onClick={() => changeLanguage()}
-                                                    className={"flag-icon flag-icon-"+ (this.lang === 'vi' ? 'gb h3' : 'vn h3')}></i></NavLink>
+                                                    className={"flag-icon flag-icon-" + (this.lang === 'vi' ? 'gb h3' : 'vn h3')}></i></NavLink>
           </NavItem>
           <NavItem className="d-md-down-none">
             <NavLink to="#" className="nav-link"><i className="icon-bell"></i><Badge pill
@@ -67,7 +69,8 @@ class DefaultHeader extends Component {
               <img src={'../../assets/img/avatars/finch.jpg'} className="img-avatar" alt="admin@bootstrapmaster.com"/>
             </DropdownToggle>
             <DropdownMenu right>
-              <DropdownItem header tag="div" className="text-center"><strong>Nam Giang</strong></DropdownItem>
+              <DropdownItem header tag="div"
+                            className="text-center"><strong><Text style={{}}>{userData.data.userName.toUpperCase()}</Text></strong></DropdownItem>
               <DropdownItem><i className="fa fa-bell-o"></i> Updates<Badge color="info">69</Badge></DropdownItem>
               <DropdownItem><i className="fa fa-envelope-o"></i> Messages<Badge
                 color="success">69</Badge></DropdownItem>

@@ -7,6 +7,7 @@ import java.util.List;
 public class OrderDTO implements Serializable {
     private Long idOrder;
     private Long idUser;
+    private Long idShipper;
     private Long status;
     private String totalMoney;
     private Date createTime;
@@ -26,6 +27,14 @@ public class OrderDTO implements Serializable {
 
     public void setIdUser(Long idUser) {
         this.idUser = idUser;
+    }
+
+    public Long getIdShipper() {
+        return idShipper;
+    }
+
+    public void setIdShipper(Long idShipper) {
+        this.idShipper = idShipper;
     }
 
     public Long getStatus() {

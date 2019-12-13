@@ -13,6 +13,7 @@ import {
     Row
 } from "reactstrap";
 import Col from "reactstrap/es/Col";
+import {LocalStorage} from "../common/StorageUtil";
 
 class ListProduct extends BaseComponent {
     constructor(props) {
@@ -104,6 +105,14 @@ class ListProduct extends BaseComponent {
             this.state.data.totalMoney = this.state.data.totalMoney + cart.totalMoney
         }
         console.log("cax",this.state.data.totalMoney);
+    };
+
+    toCheckout = () => {
+        LocalStorage.setItem("CART", this.state.cart)
+    };
+
+    removeCart = () => {
+        LocalStorage.removeItem("CART")
     };
 
     render() {
@@ -268,7 +277,9 @@ class ListProduct extends BaseComponent {
                                         <Button color="danger"><i className="fa fa-shopping-cart fa-2x mr-3"/>Thêm vào
                                             giỏ
                                             hàng</Button>
-                                        <Button onClick={this.calculateTotalMoney}>cac</Button>
+                                        <Button onClick={this.calculateTotalMoney}>total</Button>
+                                        <Button onClick={this.toCheckout}>checkout</Button>
+                                        <Button onClick={this.removeCart}>removeCart</Button>
                                     </div>
                                 </CardBody>
                             </Card>

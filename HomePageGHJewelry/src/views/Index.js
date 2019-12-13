@@ -41,6 +41,7 @@ import SectionExamples from "views/index-sections/SectionExamples.js";
 import SectionDownload from "views/index-sections/SectionDownload.js";
 import PopularProduct from "views/PopularProduct.js";
 import ListProduct from "./ListProduct";
+import Cart from "./Cart";
 function Index() {
   document.documentElement.classList.remove("nav-open");
   React.useEffect(() => {
@@ -58,6 +59,7 @@ function Index() {
         <PopularProduct/>
         <SectionDark />
         <ListProduct/>
+        <Cart/>
         {/*<SectionButtons />*/}
         {/*<SectionNavbars />*/}
         {/*<SectionNavigation />*/}

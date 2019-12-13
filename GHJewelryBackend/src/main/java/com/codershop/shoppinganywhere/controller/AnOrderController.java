@@ -26,6 +26,7 @@ public class AnOrderController extends GenericController<AnOrder, Long> {
         MessagesResponse msg = new MessagesResponse();
         AnOrder anOrder = new AnOrder();
         anOrder.setIdUser(orderDTO.getIdUser());
+        anOrder.setIdShipper(orderDTO.getIdShipper());
         anOrder.setTotalMoney(orderDTO.getTotalMoney());
         anOrder.setStatus(orderDTO.getStatus());
         anOrder.setCreateTime(orderDTO.getCreateTime());

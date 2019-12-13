@@ -10,7 +10,7 @@ import static javax.persistence.GenerationType.IDENTITY;
 
 @Entity
 @Table(name = "orders")
-@JsonPropertyOrder({"idOrder", "idUser", "status", "total", "createdTime"})
+@JsonPropertyOrder({"idOrder", "idUser", "idShipper", "status", "total", "createdTime"})
 public class AnOrder {
     @Id
     @GeneratedValue(strategy = IDENTITY)
@@ -19,6 +19,9 @@ public class AnOrder {
 
     @Column(name = "id_user")
     private Long idUser;
+
+    @Column(name = "id_shipper")
+    private Long idShipper;
 
     @Column(name = "status")
     private Long status;
@@ -44,6 +47,14 @@ public class AnOrder {
 
     public void setIdUser(Long idUser) {
         this.idUser = idUser;
+    }
+
+    public Long getIdShipper() {
+        return idShipper;
+    }
+
+    public void setIdShipper(Long idShipper) {
+        this.idShipper = idShipper;
     }
 
     public Long getStatus() {
