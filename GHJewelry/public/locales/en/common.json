@@ -18,7 +18,7 @@
     "reject": "Reject",
     "maxSizeUpLoad": "FileSize is no larger than 5mb",
     "close": "Close",
-    "back":"Go back",
+    "back": "Go back",
     "choose": "Choose",
     "addNew": "Add new",
     "update": "Update",
@@ -34,6 +34,8 @@
     "undelivered": "UNDELIVERED",
     "createdDate": "Created Date",
     "updatedDate": "Updated Date",
+    "edit": "Edit",
+    "delete": "Delete",
     "message": {
       "title": "Notification",
       "confirmDelete": "Are you sure you want to delete this item?",
@@ -55,7 +57,8 @@
       "comparisonDate": "The end date must be greater than the start date!",
       "comparisonTime": "The end time must be greater than the start time!",
       "fromDate": "The start date must be greater than the now time!",
-      "found": "Search success"
+      "found": "Search success",
+      "invalidLogin": "Wrong username or password!"
     },
     "error": {
       "LOGIN_FAIL": "Username or Password is incorrect",

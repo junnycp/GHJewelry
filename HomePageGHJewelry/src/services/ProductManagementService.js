@@ -4,6 +4,6 @@ import Constants from "../configs/Constants";
 
 export default class ProductManagementService extends BaseService {
   fetchProduct = (data) => {
-    return RestAPIHelper.get(Constants.API_URL + "Products/get-all", data);
+    return RestAPIHelper.post(Constants.API_URL + "Products/get-all", data);
   };
 }

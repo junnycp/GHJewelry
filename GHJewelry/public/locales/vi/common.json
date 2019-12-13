@@ -35,6 +35,8 @@
     "undelivered": "CHƯA GIAO HÀNG",
     "createdDate": "Ngày tạo",
     "updatedDate": "Ngày sửa",
+    "edit": "Sửa",
+    "delete": "Xóa",
     "message": {
       "title": "Thông Báo",
       "confirmDelete": "Bạn có chắc chắn muốn xóa không?",
@@ -60,7 +62,8 @@
       "requiredField": "Bạn phải nhập giá trị cho trường {{field}}",
       "compareGreateThan": "{{field1}} phải lớn hơn {{field2}}",
       "compareLessThan": "{{field1}} phải nhỏ hơn {{field2}}",
-      "found": "Tìm kiếm thành công"
+      "found": "Tìm kiếm thành công",
+      "invalidLogin": "Sai tên đăng nhập hoặc mật khẩu!"
     },
     "error": {
       "LOGIN_FAIL": "Tên đăng nhập hoặc Mật khẩu không đúng",

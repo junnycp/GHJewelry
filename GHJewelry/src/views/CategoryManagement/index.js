@@ -58,7 +58,6 @@ class UsersManagement extends BaseComponent {
   onOpenInsert = () => {
     showDialog(
       this.getDetailForm(Constants.ACTION.INSERT, {
-        status: 1
       }),
       this.trans("common.addNew")
     )
@@ -159,7 +158,7 @@ class UsersManagement extends BaseComponent {
   render() {
     return (
       <div className="animated fadeIn">
-        <DisplayBox title={<strong>{this.trans("common.search")}</strong>} expanded={true}>
+        <DisplayBox title={<strong>{this.trans("common.search")}</strong>} expanded={false}>
           <div className="row">
             <div className="col-md-6" style={{marginBottom: 10}}>
               <Label>{this.trans("category:name")}</Label>

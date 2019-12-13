@@ -19,7 +19,14 @@ class ListProduct extends BaseComponent {
         super(props);
         this.service = new ProductManagementService();
         this.state = {
-            lstProduct: []
+            data:{
+                totalMoney: 0
+            },
+            lstProduct: [],
+            cart: [],
+            inExistItem: {},
+            existItem: {},
+            quantity: 1
         }
     }
 
@@ -28,12 +35,75 @@ class ListProduct extends BaseComponent {
     }
 
     onFetchProduct = async () => {
-        let result = await this.service.fetchProduct();
+        let result = await this.service.fetchProduct([{
+            direction: 'asc',
+            property: 'nameProduct'
+        }]);
         if (result) {
             this.setState({
                 lstProduct: result.data
             })
         }
+    };
+
+    // onAddCart = async (product) => {
+    //     let InExistItem = this.state.inExistItem; //item chưa tồn tại
+    //     let ExistItem = this.state.existItem; // item đã tồn tại
+    //     if (ExistItem.idProduct === product.idProduct) { //nếu item truyền vào = item đã tồn tại
+    //         ExistItem.idProduct = product.idProduct;
+    //         ExistItem.quantity = ExistItem.quantity + 1; // thì + 1 quantity
+    //         ExistItem.totalMoney = product.price * ExistItem.quantity;
+    //     } else if (ExistItem.idProduct !== product.idProduct) { //nếu item truyền vào khác item đã tồn tại
+    //         InExistItem.idProduct = product.idProduct;
+    //         InExistItem.quantity = this.state.quantity;
+    //         InExistItem.totalMoney = product.price * InExistItem.quantity;
+    //         await this.state.cart.push(InExistItem);// thì thêm mới vào cart
+    //         await this.setState({
+    //             existItem: this.state.inExistItem
+    //         });
+    //         this.setState({
+    //             inExistItem: {}
+    //         })
+    //     }
+    //     console.log("existItem", this.state.existItem);
+    //     console.log("inExistItem", this.state.inExistItem);
+    //     console.log("cart", this.state.cart);
+    // };
+    onAddCart = async (product) => {
+        let InExistItem = this.state.inExistItem; //item chưa tồn tại
+        let ExistItem = this.state.existItem;
+        let data = this.state.data;
+
+        for (let existItem of this.state.cart) {
+            if (existItem.idProduct === product.idProduct) {
+                existItem.idProduct = product.idProduct;
+                existItem.quantity = existItem.quantity + 1; // thì + 1 quantity
+                existItem.totalMoney = product.price * existItem.quantity;
+                return;
+            }
+        }
+        if (ExistItem.idProduct !== product.idProduct) {
+            InExistItem.idProduct = product.idProduct;
+            InExistItem.quantity = this.state.quantity;
+            InExistItem.totalMoney = product.price * InExistItem.quantity;
+            await this.state.cart.push(InExistItem);// thì thêm mới vào cart
+            await this.setState({
+                existItem: InExistItem
+            });
+            await this.setState({
+                inExistItem: {}
+            });
+        }
+        console.log("inExistItem", this.state.inExistItem);
+        console.log("cart", this.state.cart);
+    };
+
+    calculateTotalMoney = () => {
+        console.log("caccc");
+        for (let cart of this.state.cart){
+            this.state.data.totalMoney = this.state.data.totalMoney + cart.totalMoney
+        }
+        console.log("cax",this.state.data.totalMoney);
     };
 
     render() {
@@ -198,6 +268,7 @@ class ListProduct extends BaseComponent {
                                         <Button color="danger"><i className="fa fa-shopping-cart fa-2x mr-3"/>Thêm vào
                                             giỏ
                                             hàng</Button>
+                                        <Button onClick={this.calculateTotalMoney}>cac</Button>
                                     </div>
                                 </CardBody>
                             </Card>
@@ -206,7 +277,7 @@ class ListProduct extends BaseComponent {
                                 <Col md="4" key={product.idProduct}>
                                     <Card>
                                         {product.image &&
-                                        <CardImg top width="100%" src={require("assets/img/products/"+product.image)}/>
+                                        <CardImg top width="100%" src={require("assets/img/products/" + product.image)}/>
                                         }
                                         <CardBody>
                                             <CardTitle>
@@ -214,7 +285,10 @@ class ListProduct extends BaseComponent {
                                                 </h5>
                                             </CardTitle>
                                             <CardSubtitle>
-                                                <label className="label label-success">Còn hàng</label>
+                                                {product.status === 1 ?
+                                                    <label className="label label-success">Còn hàng</label> :
+                                                    <label className="label label-default">Hết hàng</label>}
+
                                             </CardSubtitle>
                                             <CardSubtitle className="text-center">
                                     <span style={{fontWeight: 'bold', textDecoration: 'line-through', margin: 10}}>
@@ -237,9 +311,15 @@ class ListProduct extends BaseComponent {
                                                     type="button">
                                                     <i className="fa fa-search"/>
                                                 </Button>
-                                                <Button color="danger"><i className="fa fa-shopping-cart fa-2x mr-3"/>Thêm
-                                                    vào giỏ
-                                                    hàng</Button>
+                                                {product.status === 1 ?
+                                                    <Button color="danger" onClick={() => this.onAddCart(product)}><i
+                                                        className="fa fa-shopping-cart fa-2x mr-3"/>Thêm
+                                                        vào giỏ
+                                                        hàng</Button> : <Button color="danger" disabled><i
+                                                        className="fa fa-shopping-cart fa-2x mr-3"/>Thêm
+                                                        vào giỏ
+                                                        hàng</Button>}
+
                                             </div>
                                         </CardBody>
                                     </Card>

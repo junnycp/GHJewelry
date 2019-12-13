@@ -289,7 +289,7 @@ function IndexNavbar() {
               >
                 <i className="fa fa-shopping-cart"/>
                 {" "}Giỏ hàng{" "}
-                <Badge color="default">0</Badge>
+                <Badge color="default"></Badge>
               </Button>
             </NavItem>
           </Nav>

@@ -50,7 +50,7 @@ const RestAPIHelper = {
     _callback,
     hasDialogProcess = false,
     _error = error => {
-      console.error("errrrr",error);
+      console.error("errrrr", error);
     }
   ) {
     if (hasDialogProcess) {
@@ -142,12 +142,15 @@ const RestAPIHelper = {
     })
       .then(response => {
         if (response.ok) {
+
           return response.json();
         } else {
           throw response;
         }
+
       })
       .then(responseJson => {
+
         return this.handlingResponse(responseJson, true, _callback);
       })
       .catch(response => {
@@ -155,6 +158,10 @@ const RestAPIHelper = {
       });
   },
   handlingResponse(responseJson, hasDialogProcess, callback) {
+    console.log("asd",responseJson);
+    cookie.set(Constants.USER_DATA, responseJson, {
+      path: "/",
+    });
     if (hasDialogProcess) {
       hideProgress();
     } else {
@@ -164,6 +171,7 @@ const RestAPIHelper = {
       if (callback) {
         callback(responseJson);
       }
+      console.log("asd",responseJson);
       return responseJson;
     } else if (responseJson.status === Constants.RESPONSE_STATUS.ERROR_WITH_PAR) {
       let mess = i18n.t("common.error." + responseJson.code);
@@ -174,6 +182,9 @@ const RestAPIHelper = {
     } else {
       if (responseJson.code !== Constants.RESPONSE_CODE.EXCEPTION) {
         showErrorBox(i18n.t("common.error." + responseJson.code));
+      }
+      if (responseJson.message === "Authentication failed") {
+        showErrorBox(i18n.t("common.message.invalidLogin"))
       } else {
         showErrorBox(responseJson.message);
       }
@@ -185,9 +196,8 @@ const RestAPIHelper = {
     } else {
       hideProgressFooter();
     }
-    console.log("response nek", response);
     if (response.message === "Duplicate") {
-      showErrorBox("asdasd");
+      showErrorBox("Đã tồn tại trong hệ thống!");
     } else if (response.status === 401 || response.status === 403) {
       showErrorBox(i18n.t("common.error.TOKEN_ERR"));
     } else if (response.status === 404) {

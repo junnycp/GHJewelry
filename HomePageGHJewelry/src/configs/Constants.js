@@ -1,5 +1,5 @@
 export default {
-    API_URL: "http://localhost:8086/",
+    API_URL: "http://192.168.3.103:8086/",
     // API_URL: process.env.REACT_APP_API_URL,
     SOCKET_URL: process.env.REACT_APP_SOCKET_URL,
     PATH_FILE_UPLOAD: process.env.REACT_APP_PATH_FILE_UPLOAD,

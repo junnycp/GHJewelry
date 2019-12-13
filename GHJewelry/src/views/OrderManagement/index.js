@@ -9,11 +9,13 @@ import {showConfirm, showMessageBox} from "../../components/MessageBox";
 import ActionFormatter from "../../components/ActionFormatter";
 import {hideDialog, showDialog} from "../../components/Dialog";
 import Constants from "../../configs/Constants";
-import DetailForm from "../UsersManagement/DetailForm";
+import DetailForm from "../OrderManagement/DetailForm";
 import openNotification from "../../components/Notification";
 import OrderManagementService from "../../services/OrderManagementService";
 import BrandLogo from "../../assets/img/GHJewelry.png";
 import StatusFormatter from "../../components/StatusFormatter";
+import {LocalStorage} from "../../common/StorageUtil";
+import usersData from "../Users/UsersData";
 
 const Option = Select.Option;
 const {Meta} = Card;
@@ -26,11 +28,13 @@ class OrderManagement extends BaseComponent {
       lstOrder: [],
       lstDetail: [],
       data: {}
-    }
+    };
   }
 
   componentWillMount = () => {
+    let userData = LocalStorage.getItem("MENU");
     this.onFetchOrders();
+    console.log("asd123",userData)
   };
 
   getDetailForm(_action, _data) {
@@ -39,6 +43,7 @@ class OrderManagement extends BaseComponent {
         options={{
           action: _action,
           data: _data,
+          lstOrder: this.state.lstOrder,
           onComplete: () => {
             hideDialog(false);
             this.onFetchOrders();
@@ -90,7 +95,6 @@ class OrderManagement extends BaseComponent {
     return (
       <ActionFormatter
         menuCode={this.menuCode}
-        showView
         showDelete
         showEdit
         onClickView={() => this.onOpenView(row)}
@@ -112,8 +116,10 @@ class OrderManagement extends BaseComponent {
   genCols = () => {
     return [
       {title: this.trans("common.num"), key: 'stt', render: (text, record, index) => index + 1},
+      {title: this.trans("common.action"), key: 'action', render: this.genActionCol},
       {title: this.trans("orders:orderId"), dataIndex: 'idOrder', key: 'idOrder'},
       {title: this.trans("orders:userId"), dataIndex: 'idUser', key: 'idUser'},
+      {title: this.trans("shipper:name"), dataIndex: 'idShipper', key: 'idShipper'},
       {title: this.trans("orders:createdDate"), dataIndex: 'createTime', key: 'createTime'},
       {title: this.trans("orders:totalMoney"), dataIndex: 'totalMoney', key: 'totalMoney'},
       {title: this.trans("orders:status"), dataIndex: 'status', key: 'status', render: this.genStatusCol},
@@ -157,7 +163,7 @@ class OrderManagement extends BaseComponent {
   };
 
   onRowSelect = async (record) => {
-    console.log("record",record);
+    console.log("record", record);
     await this.setState({
       data: record,
       lstDetail: record.orderDetails,
@@ -166,7 +172,7 @@ class OrderManagement extends BaseComponent {
   };
 
   render() {
-    console.log("kakak",this.state.lstDetail);
+    console.log("kakak", this.state.lstDetail);
     return (
       <div className="animated fadeIn">
         <DisplayBox title={<strong>{this.trans("common.search")}</strong>} expanded={false}>
@@ -233,22 +239,42 @@ class OrderManagement extends BaseComponent {
           </div>
         </DisplayBox>
         <div className="row">
-          <div className="col-md-5">
+          <div className="col-md-7">
             <DisplayBox title={<strong>{this.trans("orders:title")}</strong>} expanded={true}>
-              <DataTable
-                showTopButton={false}
-                showPagination={true}
-                options={{
-                  onRowSelect: this.onRowSelect,
-                  columns: this.genCols(),
-                  dataSource: this.state.lstOrder.length === 0 ? null : this.state.lstOrder,
-                  loading: this.state.lstOrder.length === 0,
-                  rowKey: record => record.idOrder
-                }}
-                onInsert={this.onOpenInsert}/>
+              <div className="row">
+                <div className="col-md-12">
+                  <DataTable
+                    showTopButton={false}
+                    showPagination={true}
+                    options={{
+                      onRowSelect: this.onRowSelect,
+                      columns: this.genCols(),
+                      dataSource: this.state.lstOrder.length === 0 ? null : this.state.lstOrder,
+                      loading: this.state.lstOrder.length === 0,
+                      rowKey: record => record.idOrder
+                    }}
+                    onInsert={this.onOpenInsert}/>
+                </div>
+                <div className="col-md-12" style={{textAlign: 'right', marginTop: 10}}>
+                  <Button style={{marginLeft: 5}}
+                          type="primary"
+                          disabled={!this.state.isChoosen}
+                          onClick={this.onOpenUpdate}
+                          privilege={this.menuCode + "." + Constants.ACTION.UPDATE}>
+                    {this.trans("common.edit")}
+                  </Button>
+                  <Button style={{marginLeft: 5}}
+                          type="danger"
+                          disabled={!this.state.isChoosen}
+                          onClick={this.onDelete}
+                          privilege={this.menuCode + "." + Constants.ACTION.DELETE}>
+                    {this.trans("common.delete")}
+                  </Button>
+                </div>
+              </div>
             </DisplayBox>
           </div>
-          <div className="col-md-7">
+          <div className="col-md-5">
             <DisplayBox title={<strong>{this.trans("orders:detail")}</strong>} expanded={true}>
               <DataTable
                 showTopButton={false}
@@ -266,4 +292,4 @@ class OrderManagement extends BaseComponent {
   }
 }
 
-export default withTranslation(["common", "users", "product", "orders"])(OrderManagement);
+export default withTranslation(["common", "users", "product", "orders", "shipper"])(OrderManagement);

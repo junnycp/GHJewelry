@@ -65,7 +65,6 @@ class Login extends Component {
     }
     this.props.updateUserInfo({
       username: data.get("username"),
-      email: 'giangln4@fpt.com.vn'
     });
 
     this.service.login(this.adUser, result => {

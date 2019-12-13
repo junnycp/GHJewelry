@@ -2,60 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4fb532e7-873f-4c16-a0fa-6998b8e6c9ba" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../GHJewelryBackend/src/main/java/com/codershop/shoppinganywhere/controller/DetailOrderController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../GHJewelryBackend/src/main/java/com/codershop/shoppinganywhere/dao/repo/DetailOrderRepo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../GHJewelryBackend/src/main/java/com/codershop/shoppinganywhere/dao/repo/OrderRepo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../GHJewelryBackend/src/main/java/com/codershop/shoppinganywhere/dao/repo/ext/DetailOrderRepoExt.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../GHJewelryBackend/src/main/java/com/codershop/shoppinganywhere/dao/repo/ext/OrderRepoExt.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../GHJewelryBackend/src/main/java/com/codershop/shoppinganywhere/dao/repo/ext/impl/DetailOrderRepoExtImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../GHJewelryBackend/src/main/java/com/codershop/shoppinganywhere/dao/repo/ext/impl/OrderRepoExtImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../GHJewelryBackend/src/main/java/com/codershop/shoppinganywhere/model/OrderDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../GHJewelryBackend/src/main/java/com/codershop/shoppinganywhere/model/OrderDetailEmbed.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../GHJewelryBackend/src/main/java/com/codershop/shoppinganywhere/service/DetailOrderService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../GHJewelryBackend/src/main/java/com/codershop/shoppinganywhere/service/Impl/DetailOrderServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../GHJewelryBackend/src/main/java/com/codershop/shoppinganywhere/service/Impl/OrderServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../GHJewelryBackend/src/main/java/com/codershop/shoppinganywhere/service/OrderService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../HomePageGHJewelry/src/configs/Constants.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/15a3f2c6-0788-496b-9f27-907153e1779d.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/15a3f2c6-0788-496b-9f27-907153e1779d.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/views/OrderManagement/DetailForm.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/locales/en/appParam.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/locales/en/beacons.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/public/locales/en/common.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/locales/en/common.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/locales/en/orders.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/locales/en/orders.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/locales/vi/appParam.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/locales/vi/beacons.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/public/locales/vi/common.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/locales/vi/common.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/locales/vi/orders.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/locales/vi/orders.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_nav.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/_nav.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/img/brand/mbf-logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/RestAPIHelper.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/RestAPIHelper.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/DataTable.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/DataTable.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/MessageBox.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MessageBox.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/CategoryManagementService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/CategoryManagementService.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/OrderManagementService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/OrderManagementService.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/ProductManagementService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/ProductManagementService.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/UsersManagementService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/UsersManagementService.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/CategoryManagement/DetailForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/CategoryManagement/DetailForm.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/CategoryManagement/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/CategoryManagement/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/OrderManagement/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/OrderManagement/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/ProductManagement/DetailForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/ProductManagement/DetailForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/ProductManagement/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/ProductManagement/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/ShipperManagement/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/ShipperManagement/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/UsersManagement/DetailForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/UsersManagement/DetailForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/UsersManagement/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/UsersManagement/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Login/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Login/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GHJewelryBackend/src/main/java/com/codershop/shoppinganywhere/controller/AnOrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../GHJewelryBackend/src/main/java/com/codershop/shoppinganywhere/controller/AnOrderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GHJewelryBackend/src/main/java/com/codershop/shoppinganywhere/model/AnOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/../GHJewelryBackend/src/main/java/com/codershop/shoppinganywhere/model/AnOrder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GHJewelryBackend/src/main/java/com/codershop/shoppinganywhere/model/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/../GHJewelryBackend/src/main/java/com/codershop/shoppinganywhere/model/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GHJewelryBackend/src/main/java/com/codershop/shoppinganywhere/model/OrderDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../GHJewelryBackend/src/main/java/com/codershop/shoppinganywhere/model/OrderDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../HomePageGHJewelry/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../HomePageGHJewelry/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../HomePageGHJewelry/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../HomePageGHJewelry/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../HomePageGHJewelry/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../HomePageGHJewelry/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../HomePageGHJewelry/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../HomePageGHJewelry/public/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../HomePageGHJewelry/src/assets/scss/paper-kit.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../HomePageGHJewelry/src/assets/scss/paper-kit.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../HomePageGHJewelry/src/components/Footers/DemoFooter.js" beforeDir="false" afterPath="$PROJECT_DIR$/../HomePageGHJewelry/src/components/Footers/DemoFooter.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../HomePageGHJewelry/src/components/Headers/IndexHeader.js" beforeDir="false" afterPath="$PROJECT_DIR$/../HomePageGHJewelry/src/components/Headers/IndexHeader.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../HomePageGHJewelry/src/components/Navbars/IndexNavbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/../HomePageGHJewelry/src/components/Navbars/IndexNavbar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../HomePageGHJewelry/src/views/Index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../HomePageGHJewelry/src/views/Index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../HomePageGHJewelry/src/views/index-sections/SectionCarousel.js" beforeDir="false" afterPath="$PROJECT_DIR$/../HomePageGHJewelry/src/views/index-sections/SectionCarousel.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../HomePageGHJewelry/src/views/index-sections/SectionDark.js" beforeDir="false" afterPath="$PROJECT_DIR$/../HomePageGHJewelry/src/views/index-sections/SectionDark.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HomePageGHJewelry/src/configs/Constants.js" beforeDir="false" afterPath="$PROJECT_DIR$/../HomePageGHJewelry/src/configs/Constants.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HomePageGHJewelry/src/services/ProductManagementService.js" beforeDir="false" afterPath="$PROJECT_DIR$/../HomePageGHJewelry/src/services/ProductManagementService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HomePageGHJewelry/src/views/ListProduct.js" beforeDir="false" afterPath="$PROJECT_DIR$/../HomePageGHJewelry/src/views/ListProduct.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -106,10 +70,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/views/OrderManagement/index.js">
+        <entry file="file://$PROJECT_DIR$/src/views/CategoryManagement/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="302">
-              <caret line="80" column="4" selection-start-line="80" selection-start-column="4" selection-end-line="80" selection-end-column="4" />
+            <state relative-caret-position="1104">
+              <caret line="60" selection-start-line="60" selection-end-line="60" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -117,20 +81,68 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/views/OrderManagement/DetailForm.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="13" selection-start-column="13" selection-end-column="13" />
+            <state relative-caret-position="1512">
+              <caret line="75" column="26" selection-start-line="75" selection-start-column="26" selection-end-line="75" selection-end-column="26" />
+              <folding>
+                <element signature="e#0#39#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/DataTable.js">
+        <entry file="file://$PROJECT_DIR$/src/configs/Constants.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="696">
-              <caret line="33" column="57" selection-start-line="33" selection-start-column="57" selection-end-line="33" selection-end-column="57" />
+            <state relative-caret-position="72">
+              <caret line="3" column="47" lean-forward="true" selection-start-line="3" selection-start-column="47" selection-end-line="3" selection-end-column="47" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/common/RestAPIHelper.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="134">
+              <caret line="163" selection-start-line="163" selection-end-line="163" />
+              <folding>
+                <element signature="e#0#37#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/views/Login/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="402">
+              <caret line="82" column="18" selection-start-line="82" selection-start-column="17" selection-end-line="82" selection-end-column="18" />
+              <folding>
+                <element signature="e#0#39#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/views/OrderManagement/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="216">
+              <caret line="36" column="34" lean-forward="true" selection-start-line="36" selection-start-column="34" selection-end-line="36" selection-end-column="34" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/views/CategoryManagement/DetailForm.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1296">
+              <caret line="63" column="3" selection-start-line="51" selection-start-column="2" selection-end-line="63" selection-end-column="3" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -149,21 +161,9 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>onDelete</find>
-      <find>adUser</find>
-      <find>invalid</find>
-      <find>icon</find>
-      <find>lstUser</find>
-      <find>date</find>
-      <find>Font</find>
-      <find>card</find>
-      <find>403</find>
-      <find>fetchUsers</find>
-      <find>onFetchShipper</find>
       <find>lstCategory</find>
       <find>getBase64</find>
       <find>price</find>
-      <find>onSub</find>
       <find>onDele</find>
       <find>onS</find>
       <find>StorageUt</find>
@@ -179,6 +179,18 @@
       <find>showTotal</find>
       <find>expa</find>
       <find>ignore</find>
+      <find>expan</find>
+      <find>edi</find>
+      <find>onRow</find>
+      <find>genOr</find>
+      <find>gen</find>
+      <find>response</find>
+      <find>sai</find>
+      <find>err</find>
+      <find>status</find>
+      <find>onSub</find>
+      <find>TOKEN</find>
+      <find>d</find>
     </findStrings>
     <replaceStrings>
       <replace>69</replace>
@@ -206,7 +218,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/reduxs/reducers.js" />
         <option value="$PROJECT_DIR$/src/views/Login/reducers.js" />
         <option value="$PROJECT_DIR$/src/reduxs/index.js" />
         <option value="$PROJECT_DIR$/src/App.js" />
@@ -223,47 +234,49 @@
         <option value="$PROJECT_DIR$/public/locales/en/users.json" />
         <option value="$PROJECT_DIR$/.env" />
         <option value="$PROJECT_DIR$/.env.development" />
-        <option value="$PROJECT_DIR$/src/views/Login/index.js" />
         <option value="$PROJECT_DIR$/src/services/AuthenticationService.js" />
         <option value="$PROJECT_DIR$/public/locales/vi/category.json" />
         <option value="$PROJECT_DIR$/public/locales/en/category.json" />
         <option value="$PROJECT_DIR$/src/configs/routes.js" />
         <option value="$PROJECT_DIR$/public/locales/vi/product.json" />
         <option value="$PROJECT_DIR$/public/locales/en/product.json" />
-        <option value="$PROJECT_DIR$/src/configs/Constants.js" />
         <option value="$PROJECT_DIR$/src/services/ShipperManagementService.js" />
         <option value="$PROJECT_DIR$/src/views/ShipperManagement/DetailForm.js" />
         <option value="$PROJECT_DIR$/public/locales/vi/shipper.json" />
         <option value="$PROJECT_DIR$/public/locales/en/shipper.json" />
         <option value="$PROJECT_DIR$/src/components/BaseComponent.js" />
         <option value="$PROJECT_DIR$/src/components/MessageBox.js" />
-        <option value="$PROJECT_DIR$/src/common/RestAPIHelper.js" />
         <option value="$PROJECT_DIR$/src/services/UsersManagementService.js" />
         <option value="$PROJECT_DIR$/src/views/ProductManagement/DetailForm.js" />
         <option value="$PROJECT_DIR$/src/services/ProductManagementService.js" />
         <option value="$PROJECT_DIR$/src/views/ShipperManagement/index.js" />
         <option value="$PROJECT_DIR$/src/views/CategoryManagement/DetailForm.js" />
         <option value="$PROJECT_DIR$/src/services/CategoryManagementService.js" />
-        <option value="$PROJECT_DIR$/src/views/CategoryManagement/index.js" />
         <option value="$PROJECT_DIR$/src/views/UsersManagement/DetailForm.js" />
         <option value="$PROJECT_DIR$/src/views/UsersManagement/index.js" />
         <option value="$PROJECT_DIR$/src/_nav.js" />
         <option value="$PROJECT_DIR$/src/services/OrderManagementService.js" />
         <option value="$PROJECT_DIR$/src/views/ProductManagement/index.js" />
-        <option value="$PROJECT_DIR$/public/locales/vi/common.json" />
-        <option value="$PROJECT_DIR$/public/locales/en/common.json" />
         <option value="$PROJECT_DIR$/public/locales/vi/orders.json" />
         <option value="$PROJECT_DIR$/public/locales/en/orders.json" />
-        <option value="$PROJECT_DIR$/src/views/OrderManagement/index.js" />
         <option value="$PROJECT_DIR$/src/components/DataTable.js" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/public/locales/vi/common.json" />
+        <option value="$PROJECT_DIR$/public/locales/en/common.json" />
+        <option value="$PROJECT_DIR$/src/views/Login/index.js" />
+        <option value="$PROJECT_DIR$/src/views/CategoryManagement/index.js" />
+        <option value="$PROJECT_DIR$/src/views/OrderManagement/DetailForm.js" />
+        <option value="$PROJECT_DIR$/src/configs/Constants.js" />
+        <option value="$PROJECT_DIR$/src/common/RestAPIHelper.js" />
+        <option value="$PROJECT_DIR$/src/views/OrderManagement/index.js" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-10" />
-    <option name="width" value="695" />
-    <option name="height" value="745" />
+    <option name="x" value="-110" />
+    <option name="y" value="25" />
+    <option name="width" value="1940" />
+    <option name="height" value="1050" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -273,7 +286,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -281,11 +293,75 @@
               <item name="GHJewelry" type="b2602c69:ProjectViewProjectNode" />
               <item name="GHJewelry" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="GHJewelry" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GHJewelry" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="GHJewelry" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GHJewelry" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="locales" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="GHJewelry" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GHJewelry" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="locales" type="462c0819:PsiDirectoryNode" />
+              <item name="en" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="GHJewelry" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GHJewelry" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="locales" type="462c0819:PsiDirectoryNode" />
+              <item name="vi" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="GHJewelry" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GHJewelry" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="GHJewelry" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GHJewelry" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="common" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="GHJewelry" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GHJewelry" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="GHJewelry" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GHJewelry" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="CategoryManagement" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="GHJewelry" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GHJewelry" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="Login" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="GHJewelry" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GHJewelry" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="OrderManagement" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -294,7 +370,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="editor.config.ad.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../HomePageGHJewelry" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -381,18 +457,23 @@
       <workItem from="1575857170213" duration="687000" />
       <workItem from="1575866621067" duration="1191000" />
       <workItem from="1575909957670" duration="8197000" />
-      <workItem from="1575923223020" duration="322000" />
+      <workItem from="1575923223020" duration="938000" />
+      <workItem from="1576072885401" duration="9249000" />
+      <workItem from="1576151343038" duration="8601000" />
+      <workItem from="1576171555877" duration="2264000" />
+      <workItem from="1576231100318" duration="1181000" />
+      <workItem from="1576232731329" duration="4276000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="228727000" />
+    <option name="totallyTimeSpent" value="254914000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23793566" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2546917" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -409,7 +490,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.4483734" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.21640736" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.1824611" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="bottom" id="TypeScript" order="12" weight="0.32956153" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -467,29 +548,6 @@
     </option>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/locales/vi/shipper.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="16" column="2" selection-start-line="16" selection-start-column="2" selection-end-line="18" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/locales/en/shipper.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="17" column="39" selection-start-line="17" selection-start-column="39" selection-end-line="17" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/ProgressCustom.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/configs/routes.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1584">
@@ -548,16 +606,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/views/Login/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="71" column="25" lean-forward="true" selection-start-line="71" selection-start-column="25" selection-end-line="71" selection-end-column="25" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/@coreui/react/es/index.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -589,23 +637,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/services/AuthenticationService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
-          <folding>
-            <element signature="e#0#40#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/configs/Constants.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="7" column="46" lean-forward="true" selection-start-line="7" selection-start-column="46" selection-end-line="7" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/MessageBox.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
@@ -620,23 +651,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="227">
           <caret line="161" column="12" selection-start-line="161" selection-start-column="12" selection-end-line="161" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.es5.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
-          <caret line="1078" column="12" selection-start-line="1078" selection-start-column="12" selection-end-line="1078" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/common/RestAPIHelper.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="82" column="61" selection-start-line="82" selection-start-column="61" selection-end-line="82" selection-end-column="61" />
-          <folding>
-            <element signature="e#0#37#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -670,30 +684,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/views/CategoryManagement/DetailForm.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-422">
-          <caret line="74" column="52" selection-start-line="74" selection-start-column="52" selection-end-line="74" selection-end-column="52" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/antd/lib/card/index.d.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="346">
           <caret line="40" column="11" selection-start-line="40" selection-start-column="11" selection-end-line="40" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/views/CategoryManagement/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="305">
-          <caret line="129" column="28" lean-forward="true" selection-start-line="129" selection-start-column="28" selection-end-line="129" selection-end-column="28" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -817,20 +811,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/locales/vi/common.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="305">
-          <caret line="33" selection-start-line="33" selection-end-line="34" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/locales/en/common.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="33" column="31" selection-start-line="33" selection-start-column="31" selection-end-line="33" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/locales/en/orders.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="48">
@@ -859,27 +839,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="337">
-          <caret line="26" column="16" selection-start-line="26" selection-start-column="16" selection-end-line="26" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/antd/lib/table/Table.d.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="24">
           <caret line="5" column="14" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/DataTable.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="696">
-          <caret line="33" column="57" selection-start-line="33" selection-start-column="57" selection-end-line="33" selection-end-column="57" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -890,20 +853,139 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/views/OrderManagement/index.js">
+    <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="302">
-          <caret line="80" column="4" selection-start-line="80" selection-start-column="4" selection-end-line="80" selection-end-column="4" />
+        <state relative-caret-position="24">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/DataTable.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="458">
+          <caret line="33" column="57" selection-start-line="33" selection-start-column="57" selection-end-line="33" selection-end-column="57" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
+    <entry file="file://$PROJECT_DIR$/public/locales/vi/shipper.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="13" selection-start-column="13" selection-end-column="13" />
+        <state relative-caret-position="288">
+          <caret line="12" column="26" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/antd/lib/button/button.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="227">
+          <caret line="43" column="14" selection-start-line="43" selection-start-column="14" selection-end-line="43" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.es5.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="227">
+          <caret line="1078" column="12" selection-start-line="1078" selection-start-column="12" selection-end-line="1078" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/services/AuthenticationService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="6" column="29" selection-start-line="6" selection-start-column="29" selection-end-line="6" selection-end-column="29" />
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/locales/en/common.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="60" column="49" selection-start-line="60" selection-start-column="49" selection-end-line="60" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/locales/vi/common.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="39" column="16" lean-forward="true" selection-start-line="39" selection-start-column="16" selection-end-line="39" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/CategoryManagement/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1104">
+          <caret line="60" selection-start-line="60" selection-end-line="60" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/OrderManagement/DetailForm.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1512">
+          <caret line="75" column="26" selection-start-line="75" selection-start-column="26" selection-end-line="75" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/CategoryManagement/DetailForm.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1296">
+          <caret line="63" column="3" selection-start-line="51" selection-start-column="2" selection-end-line="63" selection-end-column="3" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-646">
+          <caret line="26" column="16" selection-start-line="26" selection-start-column="16" selection-end-line="26" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/configs/Constants.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="3" column="47" lean-forward="true" selection-start-line="3" selection-start-column="47" selection-end-line="3" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/common/RestAPIHelper.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="134">
+          <caret line="163" selection-start-line="163" selection-end-line="163" />
+          <folding>
+            <element signature="e#0#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/Login/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="402">
+          <caret line="82" column="18" selection-start-line="82" selection-start-column="17" selection-end-line="82" selection-end-column="18" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/OrderManagement/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="36" column="34" lean-forward="true" selection-start-line="36" selection-start-column="34" selection-end-line="36" selection-end-column="34" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
