@@ -1,0 +1,1 @@
+package com.codershop.shoppinganywhere.common.service;import com.codershop.shoppinganywhere.common.entity.LogApi;import com.codershop.shoppinganywhere.common.generics.GenericService;public interface LogApiService extends GenericService<LogApi,Integer> {}
