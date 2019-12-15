@@ -55,6 +55,7 @@ class DefaultLayout extends Component {
     this.props.history.push('/login');
     cookie.remove(Constants.STORAGE_KEY.TOKEN_LOGGED);
     LocalStorage.removeItem(Constants.STORAGE_KEY.PERMISSION);
+    LocalStorage.removeItem(Constants.STORAGE_KEY.MENU);
     window.open("/", "_self");
   }
 

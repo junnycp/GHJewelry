@@ -14,15 +14,15 @@ import {
 } from "reactstrap";
 import Col from "reactstrap/es/Col";
 import {LocalStorage} from "../common/StorageUtil";
+import {showMessageBox} from "../components/MessageBox";
+import openNotification from "../components/Notification";
 
 class ListProduct extends BaseComponent {
     constructor(props) {
         super(props);
         this.service = new ProductManagementService();
         this.state = {
-            data:{
-                totalMoney: 0
-            },
+            totalMoney: 0,
             lstProduct: [],
             cart: [],
             inExistItem: {},
@@ -32,7 +32,15 @@ class ListProduct extends BaseComponent {
     }
 
     componentWillMount() {
+        LocalStorage.removeItem("USER");
         this.onFetchProduct();
+        if (LocalStorage.getItem("CART") === null) {
+            console.log("hii")
+        } else {
+            this.setState({
+                cart: LocalStorage.getItem("CART")
+            })
+        }
     }
 
     onFetchProduct = async () => {
@@ -46,30 +54,6 @@ class ListProduct extends BaseComponent {
             })
         }
     };
-
-    // onAddCart = async (product) => {
-    //     let InExistItem = this.state.inExistItem; //item chưa tồn tại
-    //     let ExistItem = this.state.existItem; // item đã tồn tại
-    //     if (ExistItem.idProduct === product.idProduct) { //nếu item truyền vào = item đã tồn tại
-    //         ExistItem.idProduct = product.idProduct;
-    //         ExistItem.quantity = ExistItem.quantity + 1; // thì + 1 quantity
-    //         ExistItem.totalMoney = product.price * ExistItem.quantity;
-    //     } else if (ExistItem.idProduct !== product.idProduct) { //nếu item truyền vào khác item đã tồn tại
-    //         InExistItem.idProduct = product.idProduct;
-    //         InExistItem.quantity = this.state.quantity;
-    //         InExistItem.totalMoney = product.price * InExistItem.quantity;
-    //         await this.state.cart.push(InExistItem);// thì thêm mới vào cart
-    //         await this.setState({
-    //             existItem: this.state.inExistItem
-    //         });
-    //         this.setState({
-    //             inExistItem: {}
-    //         })
-    //     }
-    //     console.log("existItem", this.state.existItem);
-    //     console.log("inExistItem", this.state.inExistItem);
-    //     console.log("cart", this.state.cart);
-    // };
     onAddCart = async (product) => {
         let InExistItem = this.state.inExistItem; //item chưa tồn tại
         let ExistItem = this.state.existItem;
@@ -80,6 +64,8 @@ class ListProduct extends BaseComponent {
                 existItem.idProduct = product.idProduct;
                 existItem.quantity = existItem.quantity + 1; // thì + 1 quantity
                 existItem.totalMoney = product.price * existItem.quantity;
+                this.toCheckout();
+                window.location.reload();
                 return;
             }
         }
@@ -94,25 +80,28 @@ class ListProduct extends BaseComponent {
             await this.setState({
                 inExistItem: {}
             });
+            this.toCheckout();
+            window.location.reload();
         }
-        console.log("inExistItem", this.state.inExistItem);
         console.log("cart", this.state.cart);
     };
 
-    calculateTotalMoney = () => {
-        console.log("caccc");
-        for (let cart of this.state.cart){
-            this.state.data.totalMoney = this.state.data.totalMoney + cart.totalMoney
+    calculateTotalMoney = async () => {
+        for await (let cart of LocalStorage.getItem("CART")){
+            this.state.totalMoney = this.state.totalMoney + cart.totalMoney;
         }
-        console.log("cax",this.state.data.totalMoney);
+        console.log("totallll", this.state.totalMoney);
     };
 
-    toCheckout = () => {
-        LocalStorage.setItem("CART", this.state.cart)
+    toCheckout = async () => {
+        await LocalStorage.setItem("CART", this.state.cart);
+        await this.calculateTotalMoney();
+        LocalStorage.setItem("TOTAL", this.state.totalMoney);
     };
 
-    removeCart = () => {
-        LocalStorage.removeItem("CART")
+    clearCart = () => {
+        LocalStorage.removeItem("CART");
+        LocalStorage.removeItem("TOTAL");
     };
 
     render() {
@@ -279,7 +268,8 @@ class ListProduct extends BaseComponent {
                                             hàng</Button>
                                         <Button onClick={this.calculateTotalMoney}>total</Button>
                                         <Button onClick={this.toCheckout}>checkout</Button>
-                                        <Button onClick={this.removeCart}>removeCart</Button>
+                                        <Button onClick={this.clearCart}>clearCart</Button>
+                                        {/*<Button onClick={this.removeCart}>removeCart</Button>*/}
                                     </div>
                                 </CardBody>
                             </Card>

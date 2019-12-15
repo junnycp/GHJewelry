@@ -38,14 +38,12 @@ import {LocalStorage} from "../../common/StorageUtil";
 function IndexNavbar() {
     const [navbarColor, setNavbarColor] = React.useState("navbar-transparent");
     const [navbarCollapse, setNavbarCollapse] = React.useState(false);
+    const [cart, setCart] = React.useState(LocalStorage.getItem("CART"));
 
     const toggleNavbarCollapse = () => {
         setNavbarCollapse(!navbarCollapse);
         document.documentElement.classList.toggle("nav-open");
     };
-
-    let cart = LocalStorage.getItem("CART");
-    console.log("cart", cart);
 
     React.useEffect(() => {
         const updateNavbarColor = () => {
@@ -236,7 +234,14 @@ function IndexNavbar() {
                                         Vòng tay dây da
                                     </DropdownItem>
                                 </DropdownMenu>
-                            </UncontrolledDropdown>
+                            </UncontrolledDropdown>{LocalStorage.getItem("USER") === null ? <NavItem>
+                                <NavLink
+                                    href="#user"
+                                    target="_blank"
+                                >
+                                    <i className="fa fa-user-o"/> Login
+                                </NavLink>
+                            </NavItem> :
                             <NavItem>
                                 <NavLink
                                     href="#user"
@@ -245,6 +250,7 @@ function IndexNavbar() {
                                     <i className="fa fa-user-o"/> Quản lý thông tin
                                 </NavLink>
                             </NavItem>
+                        }
                             <UncontrolledDropdown nav inNavbar>
                                 <DropdownToggle
                                     aria-expanded={false}
@@ -287,18 +293,19 @@ function IndexNavbar() {
                                     </DropdownItem>
                                 </DropdownMenu>
                             </UncontrolledDropdown>
-                                <NavItem>
-                                    <Button
-                                        className="btn-round"
-                                        color="danger"
-                                        href="#cart"
-                                        target="_blank"
-                                    >
-                                        <i className="fa fa-shopping-cart"/>
-                                        {" "}Giỏ hàng{" "}
-                                        <Badge color="default">0</Badge>
-                                    </Button>
-                                </NavItem>
+                            <NavItem>
+                                <Button
+                                    className="btn-round"
+                                    color="danger"
+                                    href="#cart"
+                                    target="_blank"
+                                >
+                                    <i className="fa fa-shopping-cart"/>
+                                    {" "}Giỏ hàng{" "}
+                                    <Badge
+                                        color="default">{LocalStorage.getItem("CART") === null ? "0" : cart.length}</Badge>
+                                </Button>
+                            </NavItem>
                         </Nav>
                     </Collapse>
                 </Container>

@@ -70,7 +70,7 @@ class DefaultHeader extends Component {
             </DropdownToggle>
             <DropdownMenu right>
               <DropdownItem header tag="div"
-                            className="text-center"><strong><Text style={{}}>{userData.data.userName.toUpperCase()}</Text></strong></DropdownItem>
+                            className="text-center"><strong>{userData.data.userName.toUpperCase()}</strong></DropdownItem>
               <DropdownItem><i className="fa fa-bell-o"></i> Updates<Badge color="info">69</Badge></DropdownItem>
               <DropdownItem><i className="fa fa-envelope-o"></i> Messages<Badge
                 color="success">69</Badge></DropdownItem>

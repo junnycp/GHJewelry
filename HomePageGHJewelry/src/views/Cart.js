@@ -3,23 +3,12 @@ import {LocalStorage} from "../common/StorageUtil";
 import DataTable from "../components/DataTable";
 
 class Cart extends Component {
-    constructor(props){
+    constructor(props) {
         super(props);
         this.state = {
-            data:{},
-            shoppingCart:{}
+            data: {}
         }
 
-    }
-
-    componentWillMount() {
-        LocalStorage.setItem("CART", {});
-        let cart = LocalStorage.getItem("CART");
-        if(cart !== null){
-            this.setState({
-                shoppingCart: cart
-            });
-        }
     }
 
     genCols = () => {
